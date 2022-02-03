@@ -15,8 +15,8 @@ class Reservation extends Migration
     {
         Schema::create('reservation', function (Blueprint $table) {
             $table->id();
-            $table->integer('User_id');
-            $table->integer('Sejour_id');
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('sejour_id')->constrained();
             $table->timestamps();
         });
     }

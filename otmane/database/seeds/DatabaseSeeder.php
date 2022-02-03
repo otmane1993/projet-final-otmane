@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Seede\UserSeeder;
-use Seede\VilleSeeder;
-use Seede\HotelSeeder;
-use Seede\SejourSeeder;
+use Seeder\UserSeeder;
+use Seeder\VilleSeeder;
+use Seeder\HotelSeeder;
+use Seeder\SejourSeeder;
+use Seeder\ReservationSeeder;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -18,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call([VilleSeeder::class]);
         $this->call([HotelSeeder::class]);
         $this->call([SejourSeeder::class]);
+        $this->call([ReservationSeeder::class]);
     }
 }
