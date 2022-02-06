@@ -9,7 +9,7 @@ $factory->define(Sejour::class, function (Faker $faker) {
     return [
         'date_depart'=>$faker->date,
         'date_arrive'=>$faker->date,
-        'hotel_id'=>$faker->numberBetween(1,100),
-        'ville_id'=>$faker->numberBetween(1,100),
+        'hotel_id'=>$faker->numberBetween(1,25),
+        'ville_id'=>$faker->numberBetween(1,25),
     ];
 });
