@@ -1,0 +1,8 @@
+www.agencia.com
+www.agencia.com/resultat
+www.agencia.com/modify
+www.agencia.com/reservation
+www.agencia.com/signup
+www.agencia.com/remerciement
+www.agencia.com/dashboard
+www.agencia.com/404
