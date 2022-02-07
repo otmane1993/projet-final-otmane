@@ -67,7 +67,8 @@ class HotelController extends Controller
      */
     public function show($id)
     {
-        //
+        $hotel=Hotel::find($id);
+        return view('hotel.show',compact('hotel'));
     }
 
     /**
@@ -101,6 +102,9 @@ class HotelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $hotel=Hotel::find($id)->delete();
+        //dd($hotel);
+        //$hotel->delete();
+        return redirect()->route('hotel');
     }
 }

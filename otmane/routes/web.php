@@ -40,6 +40,8 @@ Route::prefix('admin')->group(function(){
         Route::get('create',[HotelController::class,'create'])->name('hotel.create');
         Route::post('store',[HotelController::class,'store'])->name('hotel.store');
         Route::get('show/{id}',[HotelController::class,'show'])->name('hotel.show');
+        Route::get('edit/{id}',[HotelController::class,'edit'])->name('hotel.edit');
+        Route::get('delete/{id}',[HotelController::class,'destroy'])->name('hotel.delete');
     });
     Route::get('/ville',[VilleController::class,'index'])->name('ville');
     Route::get('/sejour',[SejourController::class,'index'])->name('sejour');

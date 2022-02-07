@@ -20,6 +20,7 @@
                 <tr>
                     <th>Numero:</th>
                     <th>Nom:</th>
+                    <th>Price:</th>
                     <th>Image:</th>
                     <th>Actions:</th>
                 </tr>
@@ -29,13 +30,14 @@
                 <tr>
                     <td><?php echo e($hotel->id); ?></td>
                     <td><?php echo e($hotel->name_hotel); ?></td>
+                    <td><?php echo e($hotel->price); ?></td>
                     <td>
                         <img width="100" height="100" src="<?php echo e(Storage::url($hotel->image_hotel)); ?>">
                     </td>
                     <td>
-                        <a class="btn btn-success" href="">Update</a>
-                        <a class="btn btn-primary" href="">Show</a>
-                        <a class="btn btn-danger" href="">Delete</a>
+                        <a class="btn btn-success" href="<?php echo e(route('hotel.edit',$hotel->id)); ?>">Edit</a>
+                        <a class="btn btn-primary" href="<?php echo e(route('hotel.show',$hotel->id)); ?>">Show</a>
+                        <a class="btn btn-danger delete-hotel" onclick="let x=confirm('Do you really want to delete this hotel?');if(x){this.setAttribute('href','<?php echo e(route('hotel.delete',$hotel->id)); ?>');}">Delete</a>
                     </td>
                 </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
