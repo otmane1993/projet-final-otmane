@@ -14,7 +14,7 @@
         </li>
     </ul>
     <div class="create-hotel">
-        <form method="POST" action="<?php echo e(route('hotel.store')); ?>" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data" action="<?php echo e(route('hotel.store')); ?>">
             <?php echo csrf_field(); ?>
             <div class="form-group">
                 <label for="name">Nom de l'hotel:</label>

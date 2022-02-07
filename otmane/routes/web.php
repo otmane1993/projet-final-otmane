@@ -39,6 +39,7 @@ Route::prefix('admin')->group(function(){
     Route::prefix('hotel')->group(function(){
         Route::get('create',[HotelController::class,'create'])->name('hotel.create');
         Route::post('store',[HotelController::class,'store'])->name('hotel.store');
+        Route::get('show/{id}',[HotelController::class,'show'])->name('hotel.show');
     });
     Route::get('/ville',[VilleController::class,'index'])->name('ville');
     Route::get('/sejour',[SejourController::class,'index'])->name('sejour');

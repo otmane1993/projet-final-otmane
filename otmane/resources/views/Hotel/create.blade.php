@@ -14,7 +14,7 @@
         </li>
     </ul>
     <div class="create-hotel">
-        <form method="POST" action="{{route('hotel.store')}}" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data" action="{{route('hotel.store')}}">
             @csrf
             <div class="form-group">
                 <label for="name">Nom de l'hotel:</label>

@@ -25,9 +25,25 @@
                 </tr>
             </thead>
             <tbody>
-                <tr></tr>
+                @foreach($hotels as $hotel)
+                <tr>
+                    <td>{{$hotel->id}}</td>
+                    <td>{{$hotel->name_hotel}}</td>
+                    <td>
+                        <img width="100" height="100" src="{{Storage::url($hotel->image_hotel)}}">
+                    </td>
+                    <td>
+                        <a class="btn btn-success" href="{{route('')}}">Update</a>
+                        <a class="btn btn-primary" href="">Show</a>
+                        <a class="btn btn-danger" href="">Delete</a>
+                    </td>
+                </tr>
+                @endforeach
             </tbody>
         </table>
+        @if(Session::has('message'))
+        <p>{{Session::get('message')}}</p>
+        @endif
     </div>
 </div>
 @endsection

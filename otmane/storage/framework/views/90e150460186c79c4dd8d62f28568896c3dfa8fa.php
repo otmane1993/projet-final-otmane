@@ -25,9 +25,25 @@
                 </tr>
             </thead>
             <tbody>
-                <tr></tr>
+                <?php $__currentLoopData = $hotels; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $hotel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <tr>
+                    <td><?php echo e($hotel->id); ?></td>
+                    <td><?php echo e($hotel->name_hotel); ?></td>
+                    <td>
+                        <img width="100" height="100" src="<?php echo e(Storage::url($hotel->image_hotel)); ?>">
+                    </td>
+                    <td>
+                        <a class="btn btn-success" href="">Update</a>
+                        <a class="btn btn-primary" href="">Show</a>
+                        <a class="btn btn-danger" href="">Delete</a>
+                    </td>
+                </tr>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </tbody>
         </table>
+        <?php if(Session::has('message')): ?>
+        <p><?php echo e(Session::get('message')); ?></p>
+        <?php endif; ?>
     </div>
 </div>
 <?php $__env->stopSection(); ?>

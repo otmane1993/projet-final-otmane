@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Hotel;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Session;
 
 class HotelController extends Controller
 {
@@ -13,7 +16,8 @@ class HotelController extends Controller
      */
     public function index()
     {
-        return view('Hotel.hotel');
+        $hotels=Hotel::all();
+        return view('Hotel.hotel',compact('hotels'));
     }
 
     /**
@@ -34,12 +38,24 @@ class HotelController extends Controller
      */
     public function store(Request $request)
     {
-        $image=$request->file('image')->store('public/files');
+        $val = Validator::make($request->all(),[
+            'price' => 'required',
+            'name' => 'required',
+        ]);
+        //if($request->file('image')==null)
+        //{
+         //   $image="otmane.png";
+        //}
+        //else
+        //{
+            $image=$request->file('image')->store('public/files');
+        //}
         Hotel::create([
-            'name_hotel'=>$request->name,
             'price'=>$request->price,
+            'name_hotel'=>$request->name,
             'image_hotel'=>$image,
         ]);
+        Session::put('message','Hotel cree avec succes');
         return redirect()->route('hotel');
     }
 
