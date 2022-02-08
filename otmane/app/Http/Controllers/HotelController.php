@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Hotel;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class HotelController extends Controller
 {
@@ -38,10 +39,14 @@ class HotelController extends Controller
      */
     public function store(Request $request)
     {
-        $val = Validator::make($request->all(),[
-            'price' => 'required',
-            'name' => 'required',
-        ]);
+        $validate=$request->validate([
+                'price' => 'required',
+                'name' => 'required',
+            ]);
+        //$val = Validator::make($request->all(),[
+        //    'price' => 'required',
+        //    'name' => 'required',
+        //]);
         //if($request->file('image')==null)
         //{
          //   $image="otmane.png";
@@ -92,7 +97,25 @@ class HotelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validate=$request->validate([
+            'price' => 'required',
+            'name' => 'required',
+        ]);
+        $hotel=Hotel::find($id);
+        $image=$hotel->image_hotel;
+        if($request->file('image'))
+        {
+            Storage::delete($image);
+            $image=$request->file('image')->store('public/files');
+        }
+        //dd($image);
+        $hotel->price=$request->price;
+        //dd($request->price);
+        $hotel->name_hotel=$request->name;
+        $hotel->image_hotel=$image;
+        $hotel->save();
+        Session::put('update','Hotel updated successfully');
+        return redirect()->route('hotel');
     }
 
     /**

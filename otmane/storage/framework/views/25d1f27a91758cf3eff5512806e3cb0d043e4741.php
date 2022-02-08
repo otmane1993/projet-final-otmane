@@ -14,8 +14,9 @@
         </li>
     </ul>
     <div class="edit-hotel">
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST" action="<?php echo e(route('hotel.update',$hotel->id)); ?>" enctype="multipart/form-data">
             <?php echo csrf_field(); ?>
+            <?php echo method_field('PUT'); ?>
             <div class="form-group">
                 <label for="name">Nom de l'hotel:</label>
                 <input type="text" id="name" name="name" class="form-control <?php $__errorArgs = ['name'];
@@ -25,7 +26,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>">
+unset($__errorArgs, $__bag); ?>" value="<?php echo e($hotel->name_hotel); ?>">
                 <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -46,7 +47,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>">
+unset($__errorArgs, $__bag); ?>" value="<?php echo e($hotel->price); ?>">
                 <?php $__errorArgs = ['price'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

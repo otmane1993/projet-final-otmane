@@ -46,6 +46,9 @@
         <?php if(Session::has('message')): ?>
         <p><?php echo e(Session::get('message')); ?></p>
         <?php endif; ?>
+        <?php if(Session::has('update')): ?>
+        <p><?php echo e(Session::get('update')); ?></p>
+        <?php endif; ?>
     </div>
 </div>
 <?php $__env->stopSection(); ?>

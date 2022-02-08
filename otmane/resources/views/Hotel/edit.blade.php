@@ -14,11 +14,12 @@
         </li>
     </ul>
     <div class="edit-hotel">
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST" action="{{route('hotel.update',$hotel->id)}}" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
             <div class="form-group">
                 <label for="name">Nom de l'hotel:</label>
-                <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{$hotel->price}}">
+                <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{$hotel->name_hotel}}">
                 @error('name')
                 <p>{{$message}}</p>
                 @enderror

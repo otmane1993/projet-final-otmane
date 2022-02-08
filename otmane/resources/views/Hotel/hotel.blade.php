@@ -46,6 +46,9 @@
         @if(Session::has('message'))
         <p>{{Session::get('message')}}</p>
         @endif
+        @if(Session::has('update'))
+        <p>{{Session::get('update')}}</p>
+        @endif
     </div>
 </div>
 @endsection
