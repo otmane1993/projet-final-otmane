@@ -18,7 +18,14 @@
             <?php echo csrf_field(); ?>
             <div class="form-group">
                 <label for="depart">Date de depart:</label>
-                <input type="date" class="form-control" id="depart" name="depart">
+                <input type="date" class="form-control <?php $__errorArgs = ['depart'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="depart" name="depart">
                 <?php $__errorArgs = ['depart'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -32,7 +39,14 @@ unset($__errorArgs, $__bag); ?>
             </div>
             <div class="form-group">
                 <label for="arrive">Date d'arrive:</label>
-                <input type="date" class="form-control" id="arrive" name="arrive">
+                <input type="date" class="form-control <?php $__errorArgs = ['arrive'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="arrive" name="arrive">
                 <?php $__errorArgs = ['arrive'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -64,7 +78,7 @@ unset($__errorArgs, $__bag); ?>
                 <input type="submit" value="create" class="btn btn-success">
             </div>        
         </form>
-        <a href="<?php echo e(route('hotel')); ?>" class="btn btn-primary">Retour</a>
+        <a href="<?php echo e(route('sejour')); ?>" class="btn btn-primary">Retour</a>
     </div>
 </div>
 <?php $__env->stopSection(); ?>

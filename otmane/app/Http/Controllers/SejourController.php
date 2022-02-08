@@ -41,7 +41,17 @@ class SejourController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate=$request->validate([
+            'depart' => 'required',
+            'arrive' => 'required',
+        ]);
+        Sejour::create([
+            'date_depart'=>$request->depart,
+            'date_arrive'=>$request->arrive,
+            'hotel_id'=>$request->hotel,
+            'ville_id'=>$request->ville,
+        ]);
+        return redirect()->route('sejour');
     }
 
     /**

@@ -18,14 +18,14 @@
             @csrf
             <div class="form-group">
                 <label for="depart">Date de depart:</label>
-                <input type="date" class="form-control" id="depart" name="depart">
+                <input type="date" class="form-control @error('depart') is-invalid @enderror" id="depart" name="depart">
                 @error('depart')
                 <p>{{$message}}</p>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="arrive">Date d'arrive:</label>
-                <input type="date" class="form-control" id="arrive" name="arrive">
+                <input type="date" class="form-control @error('arrive') is-invalid @enderror" id="arrive" name="arrive">
                 @error('arrive')
                 <p>{{$message}}</p>
                 @enderror
@@ -50,7 +50,7 @@
                 <input type="submit" value="create" class="btn btn-success">
             </div>        
         </form>
-        <a href="{{route('hotel')}}" class="btn btn-primary">Retour</a>
+        <a href="{{route('sejour')}}" class="btn btn-primary">Retour</a>
     </div>
 </div>
 @endsection
