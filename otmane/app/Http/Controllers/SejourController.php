@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Sejour;
+use App\Hotel;
+use App\Ville;
+
 
 class SejourController extends Controller
 {
@@ -13,7 +17,8 @@ class SejourController extends Controller
      */
     public function index()
     {
-        //
+        $sejours=Sejour::all();
+        return view('Sejour.index',compact('sejours'));
     }
 
     /**
@@ -23,7 +28,9 @@ class SejourController extends Controller
      */
     public function create()
     {
-        //
+        $hotels=Hotel::all();
+        $villes=Ville::all();
+        return view('Sejour.create',compact('villes','hotels'));
     }
 
     /**

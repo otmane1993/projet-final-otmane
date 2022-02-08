@@ -27,7 +27,7 @@
                 @foreach($villes as $ville)
                 <tr>
                     <td>{{$ville->id}}</td>
-                    <td>{{$hotel->name_ville}}</td>
+                    <td>{{$ville->name_ville}}</td>
                     <td>
                         <a class="btn btn-danger delete-ville" onclick="let x=confirm('Do you really want to delete this city?');if(x){this.setAttribute('href','{{route('ville.delete',$ville->id)}}');}">Delete</a>
                     </td>

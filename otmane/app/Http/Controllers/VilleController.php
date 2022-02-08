@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use App\Ville;
 
 class VilleController extends Controller
 {
@@ -13,7 +15,8 @@ class VilleController extends Controller
      */
     public function index()
     {
-        //
+        $villes=Ville::all();
+        return view('Ville.index',compact('villes'));
     }
 
     /**
@@ -23,7 +26,7 @@ class VilleController extends Controller
      */
     public function create()
     {
-        //
+        return view('Ville.create');
     }
 
     /**
@@ -34,7 +37,14 @@ class VilleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate=$request->validate([
+            'name' => 'required',
+        ]);
+        Ville::create([
+            'name_ville'=>$request->name,
+        ]);
+        Session::put('message','Ville cree avec succes');
+        return redirect()->route('ville');
     }
 
     /**
@@ -79,6 +89,8 @@ class VilleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ville=Ville::find($id);
+        $ville->delete();
+        return redirect()->route('ville');
     }
 }
