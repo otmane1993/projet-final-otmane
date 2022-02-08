@@ -45,6 +45,10 @@ Route::prefix('admin')->group(function(){
         Route::put('update/{id}',[HotelController::class,'update'])->name('hotel.update');
     });
     Route::get('/ville',[VilleController::class,'index'])->name('ville');
+    Route::prefix('ville')->group(function(){
+        Route::get('create',[VilleController::class,'create'])->name('ville.create');
+        Route::get('delete/{id}',[VilleController::class,'destroy'])->name('ville.delete');
+    });
     Route::get('/sejour',[SejourController::class,'index'])->name('sejour');
 });
 
