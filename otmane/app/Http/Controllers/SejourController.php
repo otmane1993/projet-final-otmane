@@ -80,7 +80,13 @@ class SejourController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sejour=Sejour::find($id);
+        $hotel=Hotel::find($sejour->hotel_id);
+        $ville=Ville::find($sejour->ville_id);
+        $villes=Ville::all();
+        $hotels=Hotel::all();
+        //dd($sejour->date_arrive);  
+        return view('Sejour.edit',compact('sejour','hotel','ville','villes','hotels'));
     }
 
     /**
