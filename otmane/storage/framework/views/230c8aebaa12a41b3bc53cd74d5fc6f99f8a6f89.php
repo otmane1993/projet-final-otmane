@@ -31,8 +31,16 @@
                     <td><?php echo e($sejour->id); ?></td>
                     <td><?php echo e($sejour->date_depart); ?></td>
                     <td><?php echo e($sejour->date_arrive); ?></td>
-                    <td></td>
-                    <td></td>
+                    <?php $__currentLoopData = $hotels; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $hotel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php if($sejour->hotel_id==$hotel->id): ?>
+                    <td><?php echo e($hotel->name_hotel); ?></td>
+                    <?php endif; ?>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php $__currentLoopData = $villes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ville): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php if($sejour->ville_id==$ville->id): ?>
+                    <td><?php echo e($ville->name_ville); ?></td>
+                    <?php endif; ?>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     <td>
                         <a class="btn btn-success" href="<?php echo e(route('sejour.edit',$sejour->id)); ?>">Edit</a>
                         <a class="btn btn-primary" href="<?php echo e(route('sejour.show',$sejour->id)); ?>">Show</a>

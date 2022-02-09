@@ -43,7 +43,7 @@ class VilleController extends Controller
         Ville::create([
             'name_ville'=>$request->name,
         ]);
-        Session::put('message','Ville cree avec succes');
+        Session::put('message-ville','Ville cree avec succes');
         return redirect()->route('ville');
     }
 

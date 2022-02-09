@@ -35,11 +35,8 @@
                 @endforeach
             </tbody>
         </table>
-        @if(Session::has('message'))
-        <p>{{Session::get('message')}}</p>
-        @endif
-        @if(Session::has('update'))
-        <p>{{Session::get('update')}}</p>
+        @if(Session::has('message-ville'))
+        <p>{{Session::get('message-ville')}}</p>
         @endif
     </div>
 </div>

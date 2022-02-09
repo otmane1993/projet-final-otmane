@@ -60,7 +60,7 @@ class HotelController extends Controller
             'name_hotel'=>$request->name,
             'image_hotel'=>$image,
         ]);
-        Session::put('message','Hotel cree avec succes');
+        Session::put('message-hotel','Hotel cree avec succes');
         return redirect()->route('hotel');
     }
 
@@ -114,7 +114,7 @@ class HotelController extends Controller
         $hotel->name_hotel=$request->name;
         $hotel->image_hotel=$image;
         $hotel->save();
-        Session::put('update','Hotel updated successfully');
+        Session::put('update-hotel','Hotel updated successfully');
         return redirect()->route('hotel');
     }
 

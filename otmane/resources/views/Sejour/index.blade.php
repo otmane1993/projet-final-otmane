@@ -31,8 +31,16 @@
                     <td>{{$sejour->id}}</td>
                     <td>{{$sejour->date_depart}}</td>
                     <td>{{$sejour->date_arrive}}</td>
-                    <td></td>
-                    <td></td>
+                    @foreach($hotels as $hotel)
+                    @if($sejour->hotel_id==$hotel->id)
+                    <td>{{$hotel->name_hotel}}</td>
+                    @endif
+                    @endforeach
+                    @foreach($villes as $ville)
+                    @if($sejour->ville_id==$ville->id)
+                    <td>{{$ville->name_ville}}</td>
+                    @endif
+                    @endforeach
                     <td>
                         <a class="btn btn-success" href="{{route('sejour.edit',$sejour->id)}}">Edit</a>
                         <a class="btn btn-primary" href="{{route('sejour.show',$sejour->id)}}">Show</a>
