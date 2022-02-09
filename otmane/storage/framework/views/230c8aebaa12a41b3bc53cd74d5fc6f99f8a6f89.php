@@ -50,11 +50,11 @@
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </tbody>
         </table>
-        <?php if(Session::has('message')): ?>
-        <p><?php echo e(Session::get('message')); ?></p>
+        <?php if(Session::has('message-sejour')): ?>
+        <p><?php echo e(Session::get('message-sejour')); ?></p>
         <?php endif; ?>
-        <?php if(Session::has('update')): ?>
-        <p><?php echo e(Session::get('update')); ?></p>
+        <?php if(Session::has('update-sejour')): ?>
+        <p><?php echo e(Session::get('update-sejour')); ?></p>
         <?php endif; ?>
     </div>
 </div>

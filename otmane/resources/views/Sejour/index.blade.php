@@ -50,11 +50,11 @@
                 @endforeach
             </tbody>
         </table>
-        @if(Session::has('message'))
-        <p>{{Session::get('message')}}</p>
+        @if(Session::has('message-sejour'))
+        <p>{{Session::get('message-sejour')}}</p>
         @endif
-        @if(Session::has('update'))
-        <p>{{Session::get('update')}}</p>
+        @if(Session::has('update-sejour'))
+        <p>{{Session::get('update-sejour')}}</p>
         @endif
     </div>
 </div>

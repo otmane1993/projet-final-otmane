@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Sejour;
 use App\Hotel;
@@ -53,6 +54,7 @@ class SejourController extends Controller
             'hotel_id'=>$request->hotel,
             'ville_id'=>$request->ville,
         ]);
+        Session::put('message-sejour','Sejour cree ave succes');
         return redirect()->route('sejour');
     }
 
@@ -64,7 +66,10 @@ class SejourController extends Controller
      */
     public function show($id)
     {
-        //
+        $sejour=Sejour::find($id);
+        $hotel=Hotel::find($sejour->hotel_id);
+        $ville=Ville::find($sejour->ville_id);
+        return view('Sejour.show',compact('sejour','hotel','ville'));
     }
 
     /**
@@ -98,6 +103,7 @@ class SejourController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sejour=Sejour::find($id)->delete();
+        return redirect()->route('sejour');
     }
 }
