@@ -67,3 +67,15 @@ ul a
   background-color:green;
   height:100px;
 }
+.form-search
+{
+  display:inline-block;
+}
+.input-search
+{
+  display:block;
+}
+section.search
+{
+  padding:20px 0 20px 0;
+}
