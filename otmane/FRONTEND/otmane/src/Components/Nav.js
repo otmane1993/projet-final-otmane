@@ -1,12 +1,19 @@
 import '../App.css';
 import react from 'react';
-import { BrowserRouter,Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
+import Register from  './Register';
+import Login from  './Login';
+import Help from  './Help';
 
 function Nav() {
   return (
-    <div>
-        <nav>
-            <ul>
+    <>
+        <header className="header-acceuil">
+        <nav className="nav-accueil">
+            <ul className="ul-accueil">
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
                 <li>
                     <Link to="/login">Login</Link>
                 </li>
@@ -16,12 +23,14 @@ function Nav() {
                 <li>
                     <Link to="/help">Help</Link>
                 </li>
+                <li>
+                    <Link to="/index">Index</Link>
+                </li>
             </ul>
         </nav>
-        <Route path="/login"><Login/></Route>
-        <Route path="/register"><Register/></Route>
-        <Route path="/help"><Help/></Route>
-    </div>
+        </header>
+        <Outlet/>
+    </>
   );
 }
 

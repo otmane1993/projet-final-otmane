@@ -1,11 +1,11 @@
 import React from 'react';
 import '../App.css';
 
-function Register() {
+function Nopage() {
   return (
     <>
-        <h1>Register</h1>
+        <h1>404</h1>
     </>
   )
 }
-export default Register;
+export default Nopage;
