@@ -98,7 +98,20 @@ class SejourController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validate=$request->validate([
+        //    'date-depart' => 'required',
+        //    'date-arrive' => 'required',
+            'hotel' => 'required',
+            'ville' => 'required',
+        ]);
+        $sejour=Sejour::find($id);
+        //dd($request->date_depart);
+        $sejour->date_depart=$request->date_depart;
+        $sejour->date_arrive=$request->date_arrive;
+        $sejour->hotel_id=$request->hotel;
+        $sejour->ville_id=$request->ville;
+        $sejour->save();
+        return redirect()->route('sejour'); 
     }
 
     /**

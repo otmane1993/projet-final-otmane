@@ -49,15 +49,15 @@
             </div>
             <div class="form-group">
                 <label for="date-depart">Date de depart:</label>
-                <input type="date" class="form-control" name="date-depart" id="date-depart" value="{{$sejour->date_depart}}">
+                <input type="date" class="form-control" name="date_depart" id="date_depart" value="{{$sejour->date_depart}}">
                 @error('date-depart')
                 <p>{{$message}}</p>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="date-arrive">Date d'arrive:</label>
-                <input type="date" class="form-control" name="date-arrive" id="date-arrive" value="{{$sejour->date_arrive}}">
-                @error('date-depart')
+                <input type="date" class="form-control" name="date_arrive" id="date_arrive" value="{{$sejour->date_arrive}}">
+                @error('date-arrive')
                 <p>{{$message}}</p>
                 @enderror
             </div>

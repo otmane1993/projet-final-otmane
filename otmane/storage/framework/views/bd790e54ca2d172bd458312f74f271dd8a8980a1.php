@@ -63,7 +63,7 @@ unset($__errorArgs, $__bag); ?>
             </div>
             <div class="form-group">
                 <label for="date-depart">Date de depart:</label>
-                <input type="date" class="form-control" name="date-depart" id="date-depart" value="<?php echo e($sejour->date_depart); ?>">
+                <input type="date" class="form-control" name="date_depart" id="date_depart" value="<?php echo e($sejour->date_depart); ?>">
                 <?php $__errorArgs = ['date-depart'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -77,8 +77,8 @@ unset($__errorArgs, $__bag); ?>
             </div>
             <div class="form-group">
                 <label for="date-arrive">Date d'arrive:</label>
-                <input type="date" class="form-control" name="date-arrive" id="date-arrive" value="<?php echo e($sejour->date_arrive); ?>">
-                <?php $__errorArgs = ['date-depart'];
+                <input type="date" class="form-control" name="date_arrive" id="date_arrive" value="<?php echo e($sejour->date_arrive); ?>">
+                <?php $__errorArgs = ['date-arrive'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
