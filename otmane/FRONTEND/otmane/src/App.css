@@ -79,3 +79,8 @@ section.search
 {
   padding:20px 0 20px 0;
 }
+.card-top
+{
+  display:flex;
+  justify-content:space-around;
+}

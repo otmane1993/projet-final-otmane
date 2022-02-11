@@ -8,6 +8,7 @@ import Nopage from './Components/Nopage';
 import Index from './Components/Index';
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 function App() {
   return (
     <div className="App">
