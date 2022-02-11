@@ -9,25 +9,17 @@ function Nav() {
   return (
     <>
         <header className="header-acceuil">
-        <nav className="nav-accueil">
-            <ul className="ul-accueil">
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/login">Login</Link>
-                </li>
-                <li>
-                    <Link to="/register">Register</Link>
-                </li>
-                <li>
-                    <Link to="/help">Help</Link>
-                </li>
-                <li>
-                    <Link to="/index">Index</Link>
-                </li>
-            </ul>
-        </nav>
+            <nav className="navbar navbar-inverse nav-accueil">
+                <div className="container-fluid">
+                    <div className="navbar-header">
+                        <Link className="navbar-brand" to="/index">Agencia</Link>
+                    </div>
+                    <ul className="nav navbar-nav navbar-right">
+                        <li><Link to="/register"><span className="glyphicon glyphicon-user"></span> Sign Up</Link></li>
+                        <li><Link to="/login"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
+                    </ul>
+                </div>
+            </nav>
         </header>
         <Outlet/>
     </>
