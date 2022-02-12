@@ -23,6 +23,7 @@
                     <th>date arrive:</th>
                     <th>Hotel:</th>
                     <th>Ville:</th>
+                    <th>Actions:</th>
                 </tr>
             </thead>
             <tbody>

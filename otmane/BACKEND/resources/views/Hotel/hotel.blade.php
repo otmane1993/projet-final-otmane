@@ -31,6 +31,7 @@
                     <td>{{$hotel->id}}</td>
                     <td>{{$hotel->name_hotel}}</td>
                     <td>{{$hotel->price}}</td>
+                    <!--<td>{{$hotel->image_hotel}}</td>-->
                     <td>
                         <img width="100" height="100" src="{{Storage::url($hotel->image_hotel)}}">
                     </td>

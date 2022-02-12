@@ -15,11 +15,11 @@ class authController extends Controller
     {
         $validator=Validator::make($request->all(),[
             'email'=>['required','email'],
-            'password'=>['required','string'],
+            'password'=>['required','string' ],
         ]);
         if($validator->fails())
         {
-            return response()->json(['error'=>$validator->errors()]);
+            return response()->json(['error'=>$validator->errors()],401);
         }
         if(Auth::attempt(['email'=>$request->email,'password'=>$request->password]))
         {
@@ -28,7 +28,7 @@ class authController extends Controller
         }
         else
         {
-            return response()->json(['error'=>'mauvais identifiants de connexion']);
+            return response()->json(['error'=>'Bad credentials'],401);
         }
     }    
     public function register(Request $request)
@@ -42,16 +42,17 @@ class authController extends Controller
         ]);
         if($validator->fails())
         {
-            return response()->json(['error'=>$validator->errors()]);
+            return response()->json(['error'=>$validator->errors()],401);
         }
-        User::create([
+        $user=User::create([
             'firstname'=>$request->firstname,
             'lastname'=>$request->lastname,
             'email'=>$request->email,
             'password'=>Hash::make($request->password),
             'api_token'=>Str::random(60),
         ]);
-        return response()->json("record registed successfully");
+        $user->succes='record registed successfully';
+        return response()->json($user);
     }
     /**
      * Display a listing of the resource.

@@ -84,3 +84,11 @@ section.search
   display:flex;
   justify-content:space-around;
 }
+.invalid
+{
+  color:red;
+}
+.invalid-input
+{
+  border:1px solid red;
+}
