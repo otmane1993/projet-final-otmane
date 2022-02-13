@@ -1,10 +1,27 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
+import axios from 'axios';
 import '../App.css';
 
-function Search() {
+function Search(props) {
+    const handleSubmit=(e)=>
+    {
+        e.preventDefault();
+        //setShow(true);
+        props.change(true);
+        axios.get('http://127.0.0.1:8000/api/sejours')
+        .then((res)=>{
+            //console.log(res.data);
+            setData(res.data);
+            //props.fetch(data);
+        });
+    }
+    const [data,setData]=useState([]);
+    useEffect(()=>{
+        props.fetch(data);  
+    },[data]);
   return (
     <section className="search">
-        <form class="formulaire-search">
+        <form class="formulaire-search" onSubmit={handleSubmit}>
             <div className="form-group form-search">
                 <label htmlFor="destination">Destination</label>
                 <select name="destination" id="destination" className="form-control input-search">
