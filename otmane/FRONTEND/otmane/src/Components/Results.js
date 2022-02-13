@@ -7,10 +7,11 @@ function Results(props) {
   //const [data,setData]=useState([]);
   return (
     <section className="results">
-          {console.log(props.data)}
+          {/*{console.log(props.data)}*/}
           {
             props.data.map((item)=>{
-              <Card day={props.data.day} price={props.data.price} hotel={props.data.hotel} ville={props.data.ville} image={props.data.image}/>
+
+              return <Card day={item.day} price={item.price} hotel={item.hotel} ville={item.ville} image={item.image}/>
             })
           }
           {/*<Card ville="rabat" image={Farah} hotel="Farah"/>

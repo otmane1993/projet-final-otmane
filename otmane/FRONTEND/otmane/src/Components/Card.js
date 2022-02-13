@@ -7,7 +7,10 @@ import Twin from '../Twin.png';
 function Card(props) {
   return (
     <div className="card">
-        <p>Le sejour est de {props.day} jours</p>
+      <img width="200" height="200" src={props.image}/>
+      <p>Le sejour est de {props.day} jours</p>
+      <p>Le prix du sejour est {props.price}</p>
+      <p>L'hotel {props.hotel} dans la ville {props.ville}</p>
     </div>
   )
 }
