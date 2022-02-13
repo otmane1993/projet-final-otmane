@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\SejourfrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::post('/register',[authController::class,'register']);
 Route::post('/login',[authController::class,'login']);
+Route::get('/sejours',[SejourfrontController::class,'index']);

@@ -33,6 +33,10 @@ function Register() {
   {
     return navigate("/login");
   }
+  //if(localStorage.getItem('token'))
+  //{
+  //  setState({...state,redirect:true});
+  //}
   return (
     <>
         <form action="" method="POST" onSubmit={handleSubmit} className="container">

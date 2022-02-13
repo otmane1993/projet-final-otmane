@@ -1,11 +1,18 @@
 import '../App.css';
-import react from 'react';
+import react,{useState} from 'react';
 import { Outlet, Link } from "react-router-dom";
 import Register from  './Register';
 import Login from  './Login';
 import Help from  './Help';
 
 function Nav() {
+    const [token,setToken]=useState(null);
+    const logout=()=>{
+        //console.log('logout');
+        localStorage.setItem('token','');
+        localStorage.clear();
+        setToken(null);         
+    };
   return (
     <>
         <header className="header-acceuil">
@@ -15,8 +22,19 @@ function Nav() {
                         <Link className="navbar-brand" to="/index">Agencia</Link>
                     </div>
                     <ul className="nav navbar-nav navbar-right">
-                        <li><Link to="/register"><span className="glyphicon glyphicon-user"></span> Sign Up</Link></li>
-                        <li><Link to="/login"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
+                        {
+                            localStorage.getItem('token')
+                            ?
+                            <>
+                                <li><Link to="/register"><span className="glyphicon glyphicon-user"></span> Recherche</Link></li>
+                                <button className="btn btn-primary" onClick={logout}>Deconnexion</button>
+                            </>
+                            :
+                            <>
+                                <li><Link to="/register"><span className="glyphicon glyphicon-user"></span> Sign Up</Link></li>
+                                <li><Link to="/login"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
+                            </>
+                        }
                     </ul>
                 </div>
             </nav>

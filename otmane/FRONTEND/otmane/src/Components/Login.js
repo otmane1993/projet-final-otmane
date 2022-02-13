@@ -31,6 +31,10 @@ function Login() {
   {
     return navigate("/index");
   }
+  //if(localStorage.getItem('token'))
+  //{
+  //  setState({...state,redirect:true});
+  //}
   return (
     <>
         <form action="" className="container" onSubmit={handleSubmit}>
