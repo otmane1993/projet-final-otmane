@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {useNavigate} from "react-router-dom";
+import {useNavigate,Navigate} from "react-router-dom";
 import axios from 'axios';
 import '../App.css';
 
@@ -29,7 +29,7 @@ function Login() {
   }
   if(state.redirect)
   {
-    return navigate("/index");
+    return <Navigate to="/"/>;
   }
   //if(localStorage.getItem('token'))
   //{

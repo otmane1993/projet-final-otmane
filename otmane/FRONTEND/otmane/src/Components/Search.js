@@ -12,7 +12,7 @@ function Search(props) {
         e.preventDefault();
         //setShow(true);
         props.change(true);
-        axios.get('http://127.0.0.1:8000/api/sejours')
+        axios.post('http://127.0.0.1:8000/api/search',input)
         .then((res)=>{
             //console.log(res.data);
             setData(res.data);
@@ -30,10 +30,14 @@ function Search(props) {
     });
     if(!mounted)
     {
-        axios.get().then((res)=>{
-            console.log(res);
+        axios.get('http://127.0.0.1:8000/api/villes').then((res)=>{
+            //console.log(res.data);
+            setInput({...input,villes:res.data});
         });
     }
+    useEffect(()=>{
+        setMounted(true);  
+    },[]);
     useEffect(()=>{
         props.fetch(data);  
     },[data]);
@@ -43,9 +47,12 @@ function Search(props) {
             <div className="form-group form-search">
                 <label htmlFor="destination">Destination</label>
                 <select name="destination" id="destination" className="form-control input-search" onChange={(e)=>{setInput({...input,destination:e.target.value})}}>
-                    <option>Rabat</option>
+                    {input.villes.map((item)=>{
+                        return <option value={item.name_ville}>{item.name_ville}</option>
+                    })}
+                    {/*<option>Rabat</option>
                     <option>Fes</option>
-                    <option>Meknes</option>
+                    <option>Meknes</option>*/}
                 </select>
             </div>
             <div className="form-group form-search">

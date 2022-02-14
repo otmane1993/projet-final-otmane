@@ -19,7 +19,7 @@ function Nav() {
             <nav className="navbar navbar-inverse nav-accueil">
                 <div className="container-fluid">
                     <div className="navbar-header">
-                        <Link className="navbar-brand" to="/index">Agencia</Link>
+                        <Link className="navbar-brand" to="/">Agencia</Link>
                     </div>
                     <ul className="nav navbar-nav navbar-right">
                         {

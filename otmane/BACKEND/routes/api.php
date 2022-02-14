@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\SejourfrontController;
+use App\Http\Controllers\VillefrontController;
 
 /*
 |--------------------------------------------------------------------------
