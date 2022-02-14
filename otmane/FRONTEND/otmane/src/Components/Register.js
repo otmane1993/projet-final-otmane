@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import axios from 'axios';
-import {useNavigate} from "react-router-dom";
+import {useNavigate,Navigate} from "react-router-dom";
 import '../App.css';
 
 function Register() {
@@ -19,7 +19,7 @@ function Register() {
     e.preventDefault();
     axios.post('http://127.0.0.1:8000/api/register',state).then((res)=>{
       console.log(res.data);
-      localStorage.setItem('token',res.data.api_token);
+      //localStorage.setItem('token',res.data.api_token);
       setState({...state,redirect:true});
     })
     .catch((err)=>{
@@ -31,7 +31,7 @@ function Register() {
   }
   if(state.redirect)
   {
-    return navigate("/login");
+    return <Navigate to="/login"/>;
   }
   //if(localStorage.getItem('token'))
   //{

@@ -1,18 +1,33 @@
 import '../App.css';
 import react,{useState} from 'react';
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, Navigate } from "react-router-dom";
 import Register from  './Register';
 import Login from  './Login';
 import Help from  './Help';
 
 function Nav() {
     const [token,setToken]=useState(null);
+    const [switche,setSwitche]=useState(false);
     const logout=()=>{
         //console.log('logout');
         localStorage.setItem('token','');
+        //setRedirect(true);
+        //return <Navigate to="/login"/>
         localStorage.clear();
         setToken(null);         
     };
+    //if(redirect)
+    //{
+    //    return <Navigate to="/"/>;
+    //}
+    if(localStorage.getItem('token'))
+    {
+        //setSwitche(true);
+    }
+    else
+    {
+        //setSwitche(!switche);
+    }
   return (
     <>
         <header className="header-acceuil">
