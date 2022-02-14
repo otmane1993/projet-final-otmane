@@ -14,6 +14,45 @@ class SejourfrontController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function search(Request $request)
+    {
+        $sejours=Sejour::all();
+        $data=array();
+        foreach($sejours as $sejour)
+        {
+            $ville=Ville::find($sejour->ville_id);
+            if($sejour->date_depart==$request->depart && $ville->name_ville==$request->destination)
+            {
+            $sej=array();
+            $hotel=Hotel::find($sejour->hotel_id);
+            $ville=Ville::find($sejour->ville_id);
+            $date1=strtotime($sejour->date_arrive);
+            $date2=strtotime($sejour->date_depart);
+            $date=abs($date1-$date2);
+            $retour = array();
+            $tmp = $date;
+            $retour['second'] = $tmp % 60;
+        
+            $tmp = floor( ($tmp - $retour['second']) /60 );
+            $retour['minute'] = $tmp % 60;
+        
+            $tmp = floor( ($tmp - $retour['minute'])/60 );
+            $retour['hour'] = $tmp % 24;
+        
+            $tmp = floor( ($tmp - $retour['hour'])  /24 );
+            $retour['day'] = $tmp;
+            $day=$retour['day']; 
+            $price=($hotel->price)*$day*$request->chambre;
+            $sej['day']=$day;
+            $sej['price']=$price;
+            $sej['hotel']=$hotel->name_hotel;
+            $sej['ville']=$ville->name_ville;
+            $sej['image']=$hotel->image_hotel;
+            array_push($data,$sej);
+            }
+        }
+        return response()->json($data);
+    }
     public function index()
     {
         $sejours=Sejour::all();

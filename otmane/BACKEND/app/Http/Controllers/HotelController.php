@@ -54,6 +54,7 @@ class HotelController extends Controller
         //else
         //{
             $image=$request->file('image')->store('public/files');
+            //dd($image);
         //}
         Hotel::create([
             'price'=>$request->price,

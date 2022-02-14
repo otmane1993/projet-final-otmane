@@ -3,6 +3,10 @@ import axios from 'axios';
 import '../App.css';
 
 function Search(props) {
+    const handleRoom=()=>
+    {
+        alert(<button></button>);
+    }
     const handleSubmit=(e)=>
     {
         e.preventDefault();
@@ -16,6 +20,20 @@ function Search(props) {
         });
     }
     const [data,setData]=useState([]);
+    const [mounted,setMounted]=useState(false);
+    const [input,setInput]=useState({
+        destination:'',
+        depart:'',
+        arrive:'',
+        chambre:'',
+        villes:[],
+    });
+    if(!mounted)
+    {
+        axios.get().then((res)=>{
+            console.log(res);
+        });
+    }
     useEffect(()=>{
         props.fetch(data);  
     },[data]);
@@ -24,7 +42,7 @@ function Search(props) {
         <form class="formulaire-search" onSubmit={handleSubmit}>
             <div className="form-group form-search">
                 <label htmlFor="destination">Destination</label>
-                <select name="destination" id="destination" className="form-control input-search">
+                <select name="destination" id="destination" className="form-control input-search" onChange={(e)=>{setInput({...input,destination:e.target.value})}}>
                     <option>Rabat</option>
                     <option>Fes</option>
                     <option>Meknes</option>
@@ -32,15 +50,20 @@ function Search(props) {
             </div>
             <div className="form-group form-search">
                 <label htmlFor="depart">Depart</label>
-                <input type="date" name="depart" id="depart" className="form-control input-search"/>
+                <input type="date" name="depart" id="depart" className="form-control input-search" onChange={(e)=>{setInput({...input,depart:e.target.value})}}/>
             </div>
             <div className="form-group form-search">
                 <label htmlFor="arrive">Arrive</label>
-                <input type="date" name="arrive" id="arrive" className="form-control input-search"/>
+                <input type="date" name="arrive" id="arrive" className="form-control input-search" onChange={(e)=>{setInput({...input,arrive:e.target.value})}}/>
             </div>
             <div className="form-group form-search">
                 <label htmlFor="chambre">Chambres</label>
-                <input type="text" name="chambre" id="chambre" className="form-control input-search" placeholder="1chambre,1adulte"/>
+                {/*<input type="text" name="chambre" id="chambre" className="form-control input-search" placeholder="1chambre,1adulte"/>*/}
+                <select name="chambre" id="chambre" className="form-control input-search" onChange={(e)=>{setInput({...input,chambre:e.target.value})}}>
+                    <option value="1">1 chambre</option>
+                    <option value="2">2 chambre</option>
+                    <option value="3">3 chambre</option>
+                </select>
             </div>
             <div className="form-group form-search">
                 <input type="submit" value="rechercher" className="form-control input-search"/>                        

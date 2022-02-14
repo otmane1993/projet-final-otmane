@@ -11,6 +11,7 @@ function Card(props) {
       <p>Le sejour est de {props.day} jours</p>
       <p>Le prix du sejour est {props.price}</p>
       <p>L'hotel {props.hotel} dans la ville {props.ville}</p>
+      <button className="btn btn-success">Reserver</button>
     </div>
   )
 }

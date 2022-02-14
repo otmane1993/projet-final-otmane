@@ -22,3 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/register',[authController::class,'register']);
 Route::post('/login',[authController::class,'login']);
 Route::get('/sejours',[SejourfrontController::class,'index']);
+Route::post('/search',[SejourfrontController::class,'search']);
+Route::get('/villes',[VillefrontController::class,'index']);
