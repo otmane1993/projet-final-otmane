@@ -92,3 +92,41 @@ section.search
 {
   border:1px solid red;
 }
+.login-form
+{
+  width:30%;
+  padding:30px;
+  background-color:#746963;
+  color:white;
+  opacity:0.7;
+}
+.login-form label
+{
+  font-size:20px;
+}
+.section-login
+{
+  background:url('./Images/font-login.jpeg') no-repeat;
+  background-size:cover;
+  padding-top:20px;
+  padding-bottom:20px;
+}
+.register-form
+{
+  width:30%;
+  padding:30px;
+  background-color:#746963;
+  color:white;
+  opacity:0.7;
+}
+.register-form label
+{
+  font-size:20px;
+}
+.section-register
+{
+  background:url('./Images/font-login.jpeg') no-repeat;
+  background-size:cover;
+  padding-top:20px;
+  padding-bottom:20px;
+}

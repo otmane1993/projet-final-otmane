@@ -38,8 +38,9 @@ function Register() {
   //  setState({...state,redirect:true});
   //}
   return (
-    <>
-        <form action="" method="POST" onSubmit={handleSubmit} className="container">
+    <section className="section-register">
+        <h1>Register:</h1>
+        <form action="" method="POST" onSubmit={handleSubmit} className="container register-form">
         <div className="form-group">
             <label htmlFor="firstname">Firstname:</label>
             <input type="text" className={`form-control ${state.error && state.error.firstname ? "invalid-input":null}`} id="firstname" name="firstname" onChange={(e)=>{setState({...state,firstname:e.target.value})}}/>
@@ -67,7 +68,7 @@ function Register() {
           </div>
           <button type="submit" className="btn btn-default">Register</button>
         </form>
-    </>
+    </section>
   )
 }
 export default Register;

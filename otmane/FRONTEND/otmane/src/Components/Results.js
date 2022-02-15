@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
-import Twin from '../Twin.png';
-import Moughane from '../Moughane.png';
-import Farah from '../Farah.png';
+import Twin from '../Images/Twin.png';
+import Moughane from '../Images/Moughane.png';
+import Farah from '../Images/Farah.png';
 import Card from './Card';
 function Results(props) {
   //const [data,setData]=useState([]);

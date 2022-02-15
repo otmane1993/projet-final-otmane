@@ -36,25 +36,26 @@ function Login() {
   //  setState({...state,redirect:true});
   //}
   return (
-    <>
-        <form action="" className="container" onSubmit={handleSubmit}>
+    <section className="section-login">
+        <h1>Login:</h1>
+        <form action="" className="container login-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label for="email">Email address:</label>
-            <input type="email" className={`form-control ${state.error && state.error.email ? "invalid-input":null}`} id="email" name="email" onChange={(e)=>{setState({...state,email:e.target.value})}}/>
+            <input type="email" className={`form-control ${state.error && state.error.email ? "invalid-input":null}`} id="email" name="email" placeholder="enter your email" onChange={(e)=>{setState({...state,email:e.target.value})}}/>
             {(state.error && state.error.email)?<p className="invalid">{state.error.email[0]}</p>:''}
           </div>
           <div className="form-group">
             <label for="password">Password:</label>
-            <input type="password" className={`form-control ${state.error && state.error.password ? "invalid-input":null}`} id="password" name="password" onChange={(e)=>{setState({...state,password:e.target.value})}}/>
+            <input type="password" className={`form-control ${state.error && state.error.password ? "invalid-input":null}`} id="password" placeholder="enter your password" name="password" onChange={(e)=>{setState({...state,password:e.target.value})}}/>
             {(state.error && state.error.password)?<p className="invalid">{state.error.password[0]}</p>:''}
           </div>
           {(state.error && state.error=="Bad credentials")?<p className="invalid">{state.error}</p>:''}
           <div className="checkbox">
             <label><input type="checkbox"/> Remember me</label>
           </div>
-          <button type="submit" className="btn btn-default">Submit</button>
+          <button type="submit" className="btn btn-primary btn-lg">Submit</button>
         </form>
-    </>
+    </section>
   )
 }
 export default Login;

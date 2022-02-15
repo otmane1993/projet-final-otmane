@@ -1,8 +1,8 @@
 import React from 'react';
 import Card from './Card';
-import Farah from '../Farah.png';
-import Moughane from '../Moughane.png';
-import Twin from '../Twin.png';
+import Farah from '../Images/Farah.png';
+import Moughane from '../Images/Moughane.png';
+import Twin from '../Images/Twin.png';
 
 function Top() {
   return (
