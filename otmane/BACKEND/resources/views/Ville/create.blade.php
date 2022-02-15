@@ -13,7 +13,7 @@
             <a href="{{route('sejour')}}">Sejours</a>
         </li>
     </ul>
-    <div class="create-ville">
+    <div class="create-ville py-4">
         <form method="POST" enctype="multipart/form-data" action="{{route('ville.store')}}">
             @csrf
             <div class="form-group">

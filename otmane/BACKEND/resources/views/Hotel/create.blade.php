@@ -2,18 +2,19 @@
 
 @section('content')
 <div class="d-flex justify-content-between">
-    <ul>
+    <ul class="sidebar">
+            <img width="100" height="100" src="{{Storage::url('b5.png')}}"/>
         <li>
-            <a href="{{route('hotel')}}">Hotels</a>
+            <a href="{{route('hotel')}}" class="hotel"><i class="fa-solid fa-hotel"></i>Hotels</a>
         </li>
         <li>
-            <a href="{{route('ville')}}">Villes</a>
+            <a href="{{route('ville')}}" class="ville"><i class="fa-solid fa-city"></i>Villes</a>
         </li>
         <li>
-            <a href="{{route('sejour')}}">Sejours</a>
+            <a href="{{route('sejour')}}" class="sejour"><i class="fa-solid fa-calendar-day"></i>Sejours</a>
         </li>
     </ul>
-    <div class="create-hotel">
+    <div class="create-hotel py-4">
         <form method="POST" enctype="multipart/form-data" action="{{route('hotel.store')}}">
             @csrf
             <div class="form-group">

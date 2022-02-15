@@ -2,19 +2,20 @@
 
 @section('content')
 <div class="d-flex justify-content-between">
-    <ul>
+    <ul class="sidebar">
+            <img width="100" height="100" src="{{Storage::url('b5.png')}}"/>
         <li>
-            <a href="{{route('hotel')}}">Hotels</a>
+            <a href="{{route('hotel')}}" class="hotel"><i class="fa-solid fa-hotel"></i>Hotels</a>
         </li>
         <li>
-            <a href="{{route('ville')}}">Villes</a>
+            <a href="{{route('ville')}}" class="ville"><i class="fa-solid fa-city"></i>Villes</a>
         </li>
         <li>
-            <a href="{{route('sejour')}}">Sejours</a>
+            <a href="{{route('sejour')}}" class="sejour"><i class="fa-solid fa-calendar-day"></i>Sejours</a>
         </li>
     </ul>
-    <div class="table-sejour">
-        <a href="{{route('sejour.create')}}" class="btn btn-success">Ajouter Sejour:</a>
+    <div class="table-sejour py-4">
+        <a href="{{route('sejour.create')}}" class="btn btn-success add">Ajouter Sejour:</a>
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>

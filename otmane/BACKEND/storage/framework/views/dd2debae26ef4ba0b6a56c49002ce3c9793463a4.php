@@ -2,19 +2,20 @@
 
 <?php $__env->startSection('content'); ?>
 <div class="d-flex justify-content-between">
-    <ul>
+    <ul class="sidebar">
+            <img width="100" height="100" src="<?php echo e(Storage::url('b5.png')); ?>"/>
         <li>
-            <a href="<?php echo e(route('hotel')); ?>">Hotels</a>
+            <a href="<?php echo e(route('hotel')); ?>" class="hotel"><i class="fa-solid fa-hotel"></i>Hotels</a>
         </li>
         <li>
-            <a href="<?php echo e(route('ville')); ?>">Villes</a>
+            <a href="<?php echo e(route('ville')); ?>" class="ville"><i class="fa-solid fa-city"></i>Villes</a>
         </li>
         <li>
-            <a href="<?php echo e(route('sejour')); ?>">Sejours</a>
+            <a href="<?php echo e(route('sejour')); ?>" class="sejour"><i class="fa-solid fa-calendar-day"></i>Sejours</a>
         </li>
     </ul>
-    <div class="table-hotel">
-        <a href="<?php echo e(route('ville.create')); ?>" class="btn btn-success">Ajouter Ville:</a>
+    <div class="table-hotel py-4">
+        <a href="<?php echo e(route('ville.create')); ?>" class="btn btn-success add">Ajouter Ville:</a>
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
