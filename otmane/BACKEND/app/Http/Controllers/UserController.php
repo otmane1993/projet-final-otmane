@@ -11,6 +11,11 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function fetch(Request $request)
+    {
+       $user=User::where('api_token',$request->tokene)->get();
+       return response()->json($user);
+    }
     public function index()
     {
         return view('user');

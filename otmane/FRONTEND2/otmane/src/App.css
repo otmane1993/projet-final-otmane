@@ -36,10 +36,6 @@
     transform: rotate(360deg);
   }
 }
-
-
-           /****** Page d'accueil *******/
-
 .ul-accueil
 {
   display:flex;
@@ -129,17 +125,4 @@ section.search
   background-size:cover;
   padding-top:20px;
   padding-bottom:20px;
-}
-.search
-{
-  background-color:blue;
-}
-.form-search
-{
-  margin-right:20px;
-}
-.form-search label
-{
-  color:white;
-  font-size:20px;
 }

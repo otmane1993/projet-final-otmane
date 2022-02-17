@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\SejourfrontController;
 use App\Http\Controllers\VillefrontController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,4 @@ Route::post('/login',[authController::class,'login']);
 Route::get('/sejours',[SejourfrontController::class,'index']);
 Route::post('/search',[SejourfrontController::class,'search']);
 Route::get('/villes',[VillefrontController::class,'index']);
+Route::post('/user',[UserController::class,'fetch']);
