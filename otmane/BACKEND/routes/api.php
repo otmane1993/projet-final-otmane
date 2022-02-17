@@ -27,3 +27,6 @@ Route::get('/sejours',[SejourfrontController::class,'index']);
 Route::post('/search',[SejourfrontController::class,'search']);
 Route::get('/villes',[VillefrontController::class,'index']);
 Route::post('/user',[UserController::class,'fetch']);
+Route::prefix('/user')->group(function(){
+    Route::put('/update/{id}',[UserController::class,'update']);
+});

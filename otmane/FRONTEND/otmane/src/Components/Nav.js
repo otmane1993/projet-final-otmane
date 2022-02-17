@@ -65,11 +65,11 @@ function Nav() {
             }
             }).then((res)=>{ 
                 //console.log('Otmane');
-                console.log(res.data[0].lastname);
+                //console.log(res.data[0].lastname);
                 setName(res.data[0].lastname);
             })
             .catch(function (error) {
-                console.log("Post Error : " +error);
+                //console.log("Post Error : " +error);
             }); 
                  
                 //console.log(res.data);
@@ -80,7 +80,7 @@ function Nav() {
     if(localStorage.getItem('login'))
     {
         //setSwitche(true);
-        console.log('Login');
+        //console.log('Login');
     }
     //if(redirect)
     //{
