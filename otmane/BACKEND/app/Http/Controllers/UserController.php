@@ -76,9 +76,33 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user=User::find($id);
-        $user->firstname=$request->firstname;
-        $user->lastname=$request->lastname;
-        $user->password=Hash::make($request->password);
+        if(!$request->firstname)
+        {
+            $user->firstname=$user->firstname;
+        }
+        else
+        {
+            $user->firstname=$request->firstname;
+        }
+        if(!$request->lastname)
+        {
+            $user->lastname=$user->lastname;
+        }
+        else
+        {
+            $user->lastname=$request->lastname;
+        }
+        if(!$request->password)
+        {
+            $user->password=$user->password;
+        }
+        else
+        {
+            $user->password=Hash::make($request->password);
+        }
+        
+        //$user->lastname=$request->lastname;
+        //$user->password=Hash::make($request->password);
         $user->save();
         return response()->json(['message'=>'updating is successfully']);
     }

@@ -4,6 +4,7 @@ import axios from 'axios';
 function Modify() {
   const [mounted,setMounted]=useState(false);
   const [id,setId]=useState(0);
+  const [message,setMessage]=useState('');
   const [data,setData]=useState({
     password:'',
     firstname:'',
@@ -44,27 +45,31 @@ function Modify() {
     const handleSubmit=(e)=>{
       e.preventDefault();
       axios.put(`http://127.0.0.1:8000/api/user/update/${id}`,data).then((res)=>{
-        console.log(res);
+        console.log(res.data.message);
+        setMessage(res.data.message);
       });
     };
   return (
-    <form method="POST" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label htmlFor="password">Nouveau Mot de passe</label>
-        <input type="text" name="password" id="password" className="form-control" onChange={(e)=>{setData({...data,password:e.target.value})}}/>
-      </div>
-      <div className="form-group">
-        <label htmlFor="firstname">Nouveau Firstname</label>
-        <input type="text" name="firstname" id="firstname" className="form-control" onChange={(e)=>{setData({...data,firstname:e.target.value})}}/>
-      </div>
-      <div className="form-group">
-        <label htmlFor="lastname">Nouveau Lastname</label>
-        <input type="text" name="lastname" id="lastname" className="form-control" onChange={(e)=>{setData({...data,lastname:e.target.value})}}/>
-      </div>
-      <div>
-        <input type="submit" value="modify"/>
-      </div>
-    </form>
+    <>
+      <form method="POST" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="password">Nouveau Mot de passe</label>
+          <input type="text" name="password" id="password" className="form-control" onChange={(e)=>{setData({...data,password:e.target.value});setMessage('')}}/>
+        </div>
+        <div className="form-group">
+          <label htmlFor="firstname">Nouveau Firstname</label>
+          <input type="text" name="firstname" id="firstname" className="form-control" onChange={(e)=>{setData({...data,firstname:e.target.value});setMessage('')}}/>
+        </div>
+        <div className="form-group">
+          <label htmlFor="lastname">Nouveau Lastname</label>
+          <input type="text" name="lastname" id="lastname" className="form-control" onChange={(e)=>{setData({...data,lastname:e.target.value});setMessage('')}}/>
+        </div>
+        <div>
+          <input type="submit" value="modify"/>
+        </div>
+      </form>
+      <p>{message}</p>
+    </>
   )
 }
 export default Modify;
