@@ -7,45 +7,33 @@ import Help from  './Help';
 import axios from 'axios';
 
 function Nav() {
+    const [switche,setSwitche]=useState(false);
     const [token,setToken]=useState(null);
     const [tokene,setTokene]=useState('');
     const [name,setName]=useState('');
     const [mounted,setMounted]=useState(false);
-    //const [switche,setSwitche]=useState(false);
     const logout=(e)=>{
         e.preventDefault();
-        //console.log('logout');
         localStorage.setItem('token','');
-        //setRedirect(true);
-        //return <Navigate to="/login"/>
-        //setSwitche(false);
         localStorage.clear();
+        setSwitche(false);
+        setName('');
         setToken(null);       
     };
+
     if(!mounted)
     {
-        //setTokene(localStorage.getItem('token'));
+        setInterval(()=>{
+            if(localStorage.getItem('token'))
+            {
+                setSwitche(true);
+            }
+        },1000);
+        console.log('otmane KSAANI');
         if(localStorage.getItem('token'))
         {
-            //return <Navigate to="/"/>
-            //console.log('Home');
+            //setSwitche(true);
             const accessToken=localStorage.getItem('token');
-            //console.log(tokenee);
-            //axios.get('http://127.0.0.1:8000/api/villes')
-            //.then((res)=>{
-            //    setTokene(localStorage.getItem('token'));
-            /*const authAxios=axios.create({
-                baseURL:'http://127.0.0.1:8000/api',
-                headers:{
-                    Authorization:`Bearer ${accessToken}`,
-                },
-            });
-            authAxios.post('/user',accessToken)
-            .then((res)=>{ 
-                //console.log('Otmane');
-                console.log(res);
-                //setName(res.data.firstname);
-            });*/
             
             var reqData = {
                 "tokene": `${accessToken}`,
@@ -64,39 +52,18 @@ function Nav() {
               "Postman-Token": `Bearer ${accessToken}`,
             }
             }).then((res)=>{ 
-                //console.log('Otmane');
-                //console.log(res.data[0].lastname);
                 setName(res.data[0].lastname);
+                //setSwitche(true);
             })
             .catch(function (error) {
-                //console.log("Post Error : " +error);
+               
             }); 
-                 
-                //console.log(res.data);
-                //setName(res.firstname);
-            //});
         }
     }
     if(localStorage.getItem('login'))
     {
-        //setSwitche(true);
-        //console.log('Login');
+    
     }
-    //if(redirect)
-    //{
-    //    return <Navigate to="/"/>;
-    //}
-    /*if(localStorage.getItem('token'))
-    {
-        console.log('Home');
-        const tokene=localStorage.getItem('token');
-        axios.post('http://127.0.0.1:8000/user',tokene)
-        .then((res)=>{ 
-            console.log(res.firstname);
-            setName(res.firstname);
-        });
-    }*/
-    //setInterval(Nav, 1000);
   return (
     <>
         <header className="header-acceuil">
@@ -107,7 +74,8 @@ function Nav() {
                     </div>
                     <ul className="nav navbar-nav navbar-right">
                         {
-                            localStorage.getItem('token')
+                            //localStorage.getItem('token')
+                            switche
                             ?
                             <>
                                 <li>

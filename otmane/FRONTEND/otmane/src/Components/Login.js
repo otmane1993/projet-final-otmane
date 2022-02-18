@@ -35,10 +35,6 @@ function Login() {
   {
     return <Navigate to="/"/>;
   }
-  //if(localStorage.getItem('token'))
-  //{
-  //  setState({...state,redirect:true});
-  //}
   return (
     <section className="section-login">
         <h1>Login:</h1>
