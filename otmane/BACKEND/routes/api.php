@@ -6,6 +6,7 @@ use App\Http\Controllers\authController;
 use App\Http\Controllers\SejourfrontController;
 use App\Http\Controllers\VillefrontController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,7 @@ Route::get('/villes',[VillefrontController::class,'index']);
 Route::post('/user',[UserController::class,'fetch']);
 Route::prefix('/user')->group(function(){
     Route::put('/update/{id}',[UserController::class,'update']);
+});
+Route::prefix('/reservation')->group(function(){
+    Route::post('/store',[ReservationController::class,'store']);
 });

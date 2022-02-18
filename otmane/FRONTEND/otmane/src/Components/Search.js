@@ -26,6 +26,7 @@ function Search(props) {
         depart:'',
         arrive:'',
         chambre:'',
+        sejour:0,
         villes:[],
     });
     if(!mounted)

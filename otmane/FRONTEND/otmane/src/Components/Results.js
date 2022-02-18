@@ -11,7 +11,7 @@ function Results(props) {
           {
             props.data.map((item)=>{
 
-              return <Card day={item.day} price={item.price} hotel={item.hotel} ville={item.ville} image={item.image}/>
+              return <Card day={item.day} price={item.price} hotel={item.hotel} ville={item.ville} image={item.image} sejour={item.sejour}/>
             })
           }
           {/*<Card ville="rabat" image={Farah} hotel="Farah"/>
