@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import axios from 'axios';
+import {Navigate} from 'react-router-dom';
 
 function Modify() {
   const [mounted,setMounted]=useState(false);
@@ -43,12 +44,21 @@ function Modify() {
       }
     };
     const handleSubmit=(e)=>{
-      e.preventDefault();
-      axios.put(`http://127.0.0.1:8000/api/user/update/${id}`,data).then((res)=>{
+      //
+    if(window.confirm('Do you really want to update coordinates?')==true)
+      {
+        e.preventDefault();
+        axios.put(`http://127.0.0.1:8000/api/user/update/${id}`,data).then((res)=>{
         console.log(res.data.message);
         setMessage(res.data.message);
       });
-    };
+    }
+    else
+    {
+      e.preventDefault();
+      //return <Navigate to="/modify"/>
+    }
+  }
   return (
     <>
       <form method="POST" onSubmit={handleSubmit}>
