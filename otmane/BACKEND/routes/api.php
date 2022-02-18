@@ -33,4 +33,5 @@ Route::prefix('/user')->group(function(){
 });
 Route::prefix('/reservation')->group(function(){
     Route::post('/store',[ReservationController::class,'store']);
+    Route::get('/fetch/{id}',[ReservationController::class,'fetch'])->name('reser.fetch');
 });
