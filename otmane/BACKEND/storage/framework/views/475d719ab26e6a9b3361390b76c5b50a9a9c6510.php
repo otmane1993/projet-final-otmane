@@ -45,6 +45,8 @@
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </tbody>
         </table>
+        <?php echo e($hotels->links()); ?>
+
         <?php if(Session::has('message-hotel')): ?>
         <p><?php echo e(Session::get('message-hotel')); ?></p>
         <?php endif; ?>

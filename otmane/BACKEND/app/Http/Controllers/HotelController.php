@@ -7,6 +7,7 @@ use App\Hotel;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\Collection;
 
 class HotelController extends Controller
 {
@@ -17,7 +18,7 @@ class HotelController extends Controller
      */
     public function index()
     {
-        $hotels=Hotel::all();
+        $hotels=Hotel::paginate(5);
         return view('Hotel.hotel',compact('hotels'));
     }
 
