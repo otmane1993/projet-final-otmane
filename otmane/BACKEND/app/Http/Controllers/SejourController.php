@@ -18,7 +18,7 @@ class SejourController extends Controller
      */
     public function index()
     {
-        $sejours=Sejour::all();
+        $sejours=Sejour::paginate(5);
         $hotels=Hotel::all();
         $villes=Ville::all();
         return view('Sejour.index',compact('sejours','hotels','villes'));

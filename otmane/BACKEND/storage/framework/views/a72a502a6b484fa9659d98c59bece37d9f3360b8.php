@@ -13,7 +13,7 @@
             <a href="<?php echo e(route('sejour')); ?>">Sejours</a>
         </li>
     </ul>
-    <div class="create-ville">
+    <div class="create-ville py-4">
         <form method="POST" enctype="multipart/form-data" action="<?php echo e(route('ville.store')); ?>">
             <?php echo csrf_field(); ?>
             <div class="form-group">

@@ -52,6 +52,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{$sejours->links()}}
         @if(Session::has('message-sejour'))
         <p>{{Session::get('message-sejour')}}</p>
         @endif

@@ -36,6 +36,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{$villes->links()}}
         @if(Session::has('message-ville'))
         <p>{{Session::get('message-ville')}}</p>
         @endif
