@@ -1,13 +1,15 @@
 import '../App.css';
 import react,{useState,useEffect} from 'react';
-import { Outlet, Link, Navigate } from "react-router-dom";
+import { Outlet, Link,useNavigate, Navigate } from "react-router-dom";
 import Register from  './Register';
 import Login from  './Login';
 import Help from  './Help';
 import axios from 'axios';
 
 function Nav() {
+    let navigate=useNavigate();
     const [switche,setSwitche]=useState(false);
+    const [redirect,setRedirect]=useState(false);
     const [token,setToken]=useState(null);
     const [tokene,setTokene]=useState('');
     const [name,setName]=useState('');
@@ -18,7 +20,8 @@ function Nav() {
         localStorage.clear();
         setSwitche(false);
         setName('');
-        setToken(null);       
+        setToken(null);
+        setRedirect(true);       
     };
 
     if(!mounted)
@@ -60,9 +63,10 @@ function Nav() {
             }); 
         }
     }
-    if(localStorage.getItem('login'))
+    if(redirect)
     {
-    
+        setTimeout(()=>{setRedirect(false)},1);
+        return <Navigate to="/"/>;
     }
   return (
     <>
@@ -82,6 +86,7 @@ function Nav() {
                                     <h4>Bonjour {name}</h4>
                                 </li>
                                 <li><Link to="/history"><span className="glyphicon glyphicon-user"></span>History</Link></li>
+                                <li><Link to="/"><span className="glyphicon glyphicon-user"></span>Recherche</Link></li>
                                 <li><button className="btn btn-primary" onClick={logout}>Deconnexion</button></li>
                                 <li>
                                 <Link to="/modify"><span className="glyphicon glyphicon-user"></span>Modify</Link>

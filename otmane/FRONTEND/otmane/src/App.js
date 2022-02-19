@@ -10,21 +10,32 @@ import History from './Components/History';
 import Thanks from './Components/Thanks';
 import ReactDOM from "react-dom";
 import Modify from './Components/Modify';
+import ProtectedRoutes from './Components/ProtectedRoutes';
+import ProtectedAuth from './Components/ProtectedAuth';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+  const token=localStorage.getItem('token');
   return (
     <div className="App">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Nav />}>
               <Route path="home" element={<Home />} />
-              <Route path="modify" element={<Modify />}/>
+              
+              {/*<Protected exact path="modify" component={Modify}/>*/}
               <Route path="" element={<Index />} />
-              <Route path="login" element={<Login />} />
+              <Route element={<ProtectedAuth/>}>
+                <Route path="login" element={<Login />} />
+                <Route path="register" element={<Register />} />
+              </Route>
+              
               <Route path="thanks" element={<Thanks />} />
-              <Route path="history" element={<History />} />
-              <Route path="register" element={<Register />} />
+              <Route element={<ProtectedRoutes/>}>
+                <Route path="modify" element={<Modify />}/> 
+                <Route path="history" element={<History />} />
+              </Route>
+              
               <Route path="help" element={<Help />} />
               <Route path="*" element={<Nopage/>} />
             </Route>
