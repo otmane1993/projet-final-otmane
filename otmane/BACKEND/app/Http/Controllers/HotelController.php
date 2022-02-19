@@ -55,6 +55,8 @@ class HotelController extends Controller
         //else
         //{
             $image=$request->file('image')->store('public/files');
+            //dd(explode('/',$image)[2]);
+            //dd($image);
             //dd($image);
         //}
         Hotel::create([

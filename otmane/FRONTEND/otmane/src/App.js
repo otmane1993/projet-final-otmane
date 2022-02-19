@@ -30,8 +30,9 @@ function App() {
                 <Route path="register" element={<Register />} />
               </Route>
               
-              <Route path="thanks" element={<Thanks />} />
+              
               <Route element={<ProtectedRoutes/>}>
+                <Route path="thanks" element={<Thanks />} />
                 <Route path="modify" element={<Modify />}/> 
                 <Route path="history" element={<History />} />
               </Route>

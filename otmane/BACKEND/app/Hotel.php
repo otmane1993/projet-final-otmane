@@ -12,4 +12,9 @@ class Hotel extends Model
     {
         return $this->hasMany(Sejour::class,'Hotel_id','id');
     }
+           /**** apparaitre des images ****'*/
+    /*public function getImageAttribute()
+    {
+        return asset('storage'.$this->image_path);
+    }*/
 }

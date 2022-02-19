@@ -35,6 +35,7 @@
                     <!--<td><?php echo e($hotel->image_hotel); ?></td>-->
                     <td>
                         <img width="100" height="100" src="<?php echo e(Storage::url($hotel->image_hotel)); ?>">
+                        <!--<img src="<?php echo e(asset('storage/images/GHeZVWFtZZcaVxU5TDqqy3Sj4BOsOiMFPwFp52hF.png')); ?>" alt="">-->
                     </td>
                     <td>
                         <a class="btn btn-success" href="<?php echo e(route('hotel.edit',$hotel->id)); ?>">Edit</a>

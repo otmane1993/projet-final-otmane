@@ -8,6 +8,7 @@ import axios from 'axios';
 
 function Card(props) {
   const [redirect,setRedirect]=useState(false);
+  const [redir,setRedir]=useState(false);
   const [sejour,setSejour]=useState(0);
   const [user,setUser]=useState(0);
   const [data,setData]=useState({
@@ -17,6 +18,11 @@ function Card(props) {
   const [mounted,setMounted]=useState(false);
   const handleClick=()=>
   {
+    if(!localStorage.getItem('token'))
+    {
+      setRedir(true);
+      //return <Navigate to="/login"/>
+    }
     setSejour(props.sejour);
     //setData({...data,sejour:sejour});
     //setRedirect(true);
@@ -68,13 +74,17 @@ function Card(props) {
   {
     return <Navigate to="/thanks"/>
   }
+  if(redir)
+  {
+    return <Navigate to="/login"/>
+  }
   return (
     <div className="card">
       <img width="200" height="200" src={props.image}/>
       <p>Le sejour est de {props.day} jours</p>
       <p>Le prix du sejour est {props.price}</p>
       <p>L'hotel {props.hotel} dans la ville {props.ville}</p>
-      <button className="btn btn-success" onClick={handleClick}>Reserver</button>
+      <button className="btn btn-success" onClick={handleClick}>Reserve</button>
     </div>
   )
 }
