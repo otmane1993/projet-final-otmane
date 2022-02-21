@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import axios from 'axios';
 import {Navigate} from 'react-router-dom';
+import Footer from './Footer';
 
 function Modify() {
   const [mounted,setMounted]=useState(false);
@@ -61,24 +62,25 @@ function Modify() {
   }
   return (
     <>
-      <form method="POST" onSubmit={handleSubmit}>
+      <form method="POST" onSubmit={handleSubmit} className="container modify-form">
         <div className="form-group">
           <label htmlFor="password">Nouveau Mot de passe</label>
-          <input type="text" name="password" id="password" className="form-control" onChange={(e)=>{setData({...data,password:e.target.value});setMessage('')}}/>
+          <input type="text" name="password" placeholder="Entrez nouveau password" id="password" className="form-control" onChange={(e)=>{setData({...data,password:e.target.value});setMessage('')}}/>
         </div>
         <div className="form-group">
           <label htmlFor="firstname">Nouveau Firstname</label>
-          <input type="text" name="firstname" id="firstname" className="form-control" onChange={(e)=>{setData({...data,firstname:e.target.value});setMessage('')}}/>
+          <input type="text" name="firstname" placeholder="Entrez nouveau firstname" id="firstname" className="form-control" onChange={(e)=>{setData({...data,firstname:e.target.value});setMessage('')}}/>
         </div>
         <div className="form-group">
           <label htmlFor="lastname">Nouveau Lastname</label>
-          <input type="text" name="lastname" id="lastname" className="form-control" onChange={(e)=>{setData({...data,lastname:e.target.value});setMessage('')}}/>
+          <input type="text" name="lastname" id="lastname" placeholder="Entrez nouveau lastname" className="form-control" onChange={(e)=>{setData({...data,lastname:e.target.value});setMessage('')}}/>
         </div>
         <div>
-          <input type="submit" value="modify"/>
+          <input type="submit" value="modify" className="btn btn-info btn-lg"/>
         </div>
       </form>
-      <p>{message}</p>
+      {(message)?<p className="message-modify container">{message}</p>:<p></p>}
+      <Footer/>
     </>
   )
 }

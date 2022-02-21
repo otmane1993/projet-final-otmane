@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import {useNavigate,Navigate} from "react-router-dom";
 import axios from 'axios';
 import '../App.css';
+import Footer from './Footer';
 
 function Login() {
   let navigate=useNavigate();
@@ -36,6 +37,7 @@ function Login() {
     return <Navigate to="/"/>;
   }
   return (
+    <>
     <section className="section-login">
         <h1>Login:</h1>
         <form action="" className="container login-form" onSubmit={handleSubmit}>
@@ -56,6 +58,8 @@ function Login() {
           <button type="submit" className="btn btn-primary btn-lg">Submit</button>
         </form>
     </section>
+    <Footer/>
+    </>
   )
 }
 export default Login;

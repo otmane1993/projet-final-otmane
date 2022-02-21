@@ -143,3 +143,317 @@ section.search
   color:white;
   font-size:20px;
 }
+
+             /********** Navbar **********/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+*{ 
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+scroll-behavior: smooth;
+list-style: none;
+text-decoration: none;
+/* font-family: ‘Montserrat’, sans-serif; */
+}
+body{
+font-family: 'Montserrat', sans-serif;
+}
+nav{
+background: #0082e6;
+height: 120px;
+width: 100%;
+}
+label.logo{
+color: white;
+font-size: 35px;
+line-height: 80px;
+font-weight: 600;
+padding: 0 100px;
+cursor: pointer;
+}
+nav ul{
+float: right;
+margin-right: 20px;
+height:100%;
+}
+nav ul li{
+display: inline-block;
+line-height: 80px;
+margin: 0 5px;
+height:100%;
+}
+nav ul li a{
+color: white;
+font-size: 17px;
+padding: 7px 17px;
+border-radius: 3px;
+text-transform: uppercase;
+font-weight: 600;
+}
+a.active,a:hover{
+background: #1b9bff;
+transition: .5s;
+}
+.check-btn{
+color: white;
+font-size: 30px;
+float: right;
+line-height: 80px;
+margin-right: 40px;
+cursor: pointer;
+display: none;
+}
+#check{
+display: none;
+}
+@media (max-width: 952px){
+label.logo{
+font-size: 30px;
+padding-left: 50px;
+}
+nav ul li a{
+font-size: 16px;
+}
+}
+@media (max-width: 858px){
+.check-btn{
+display: block;
+}
+ul{
+position: fixed;
+height: 100vh;
+width: 100%;
+background: #2c3e50;
+top: 80px;
+left: -100%;
+text-align: center;
+transition: all .5s;
+}
+nav ul li{
+display: block;
+margin: 50px 0;
+line-height: 30px;
+}
+nav ul li a{
+font-size: 20px;
+}
+a:hover,a.active{
+background: none;
+color: #0082e6;
+}
+#check:checked ~ ul{
+left: 0;
+}
+}
+/*section{
+background: url(./images/bg1.jpg);
+background-size: cover;
+height: calc(100vh — 80px);
+}*/
+
+
+
+      /*****  Footer  *****/
+
+*, *:before, *:after {
+box-sizing: border-box;
+}
+
+body {
+font-family: poppins;
+margin: 0;
+display: grid;
+font-size: 14px;
+}
+header p {
+padding: 50px;
+text-align: center;
+color: #bebebe;
+text-transform: uppercase;
+font-size: 65px;
+font-weight: 700;
+}
+.footer {
+display: flex;
+flex-flow: row wrap;
+padding: 50px;
+color: #fff;
+background-color: darkblue;
+}
+
+.footer > * {
+flex:  1 100%;
+}
+
+.l-footer {
+margin-right: 1.25em;
+margin-bottom: 2em;
+}
+
+h2 {
+font-weight: 400;
+font-size: 15px;
+}
+
+.footer ul {
+list-style: none;
+padding-left: 0;
+}
+
+.footer li {
+line-height: 2em;
+}
+
+.footer a {
+text-decoration: none;
+}
+
+.r-footer {
+display: flex;
+flex-flow: row wrap;
+}
+
+.r-footer > * {
+flex: 1 50%;
+margin-right: 1.25em;
+}
+
+.box a {
+color: #999;
+}
+
+.h-box {
+column-count: 2;
+column-gap: 1.25em;
+}
+
+.b-footer {
+text-align: center;
+color: #999;
+padding-top: 50px;
+}
+
+.l-footer p {
+padding-right: 20%;
+color: #999;
+}   
+
+@media screen and (min-width: 600px) {
+.r-footer > * {
+flex: 1;
+}
+
+.features {
+flex-grow: 2;
+}
+
+.l-footer {
+flex: 1 0px;
+}
+
+.r-footer {
+flex: 2 0px;
+}
+}
+footer
+{
+  font-size:20px;
+}
+footer h2
+{
+  font-weight:bold;
+  font-size:20px !important;
+}
+.modify-form
+{
+  width:50%;
+  margin-top:50px;
+  margin-bottom:50px;
+}
+.message-modify
+{
+  width:30%;
+  height:50px;
+  background-color:#31B0D5;
+  color:white;
+  font-size:20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.hello-name
+{
+  color:white;
+}
+
+           /******** Page 404 *******/
+
+.mainbox {
+background-color: #95c2de;
+margin: auto;
+height: 600px;
+/*width: 600px;*/
+position: relative;
+}
+
+.err {
+  color: #ffffff;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 11rem;
+  position:absolute;
+  left: 45%;
+  top: 8%;
+  /*margin-right:auto;
+  margin-left:auto;*/
+}
+
+.far {
+  position: absolute;
+  font-size: 8.5rem;
+  left: 42%;
+  top: 15%;
+  color: #ffffff;
+}
+
+.err2 {
+  color: #ffffff;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 11rem;
+  position:absolute;
+  left: 68%;
+  top: 8%;
+}
+
+.msg {
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.6rem;
+    position:absolute;
+    left: 16%;
+    top: 45%;
+    width: 75%;
+  }
+
+.mainbox a {
+text-decoration: none;
+color: white;
+}
+
+.mainbox a:hover {
+  text-decoration: underline;
+}
+.mainbox p
+{
+  font-size:20px;
+}
+.thanks
+{
+  background-color:#31B0D5;
+  height:400px;
+  font-size:80px;
+}
+.p1
+{
+  text-align:center;
+}

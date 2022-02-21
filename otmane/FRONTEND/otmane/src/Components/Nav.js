@@ -5,6 +5,7 @@ import Register from  './Register';
 import Login from  './Login';
 import Help from  './Help';
 import axios from 'axios';
+import logo from '../Images/logo.png';
 
 function Nav() {
     let navigate=useNavigate();
@@ -71,10 +72,10 @@ function Nav() {
   return (
     <>
         <header className="header-acceuil">
-            <nav className="navbar navbar-inverse nav-accueil">
+            {/*<nav className="navbar navbar-inverse nav-accueil">
                 <div className="container-fluid">
                     <div className="navbar-header">
-                        <Link className="navbar-brand" to="/">Agencia</Link>
+                        <Link className="navbar-brand" to="/"><img src={logo} width="100" height="100"/></Link>
                     </div>
                     <ul className="nav navbar-nav navbar-right">
                         {
@@ -100,6 +101,36 @@ function Nav() {
                         }
                     </ul>
                 </div>
+                    </nav>*/}
+            <nav>
+                <input type="checkbox" id="check"/>
+                <label for="check" class="check-btn">
+                <i class="fas fa-bars"></i>
+                </label>
+                <Link className="navbar-brand" to="/"><img src={logo} width="100" height="100"/></Link>
+                <ul>
+                {
+                    //localStorage.getItem('token')
+                    switche
+                    ?
+                    <>
+                        <li>
+                            <h4 className="hello-name">Bonjour {name}</h4>
+                        </li>
+                        <li><Link to="/history"><span className="glyphicon glyphicon-user"></span>History</Link></li>
+                        <li><Link to="/"><span className="glyphicon glyphicon-search"></span>Recherche</Link></li>
+                        <li><button className="btn btn-primary" onClick={logout}>Deconnexion</button></li>
+                        <li>
+                        <Link to="/modify"><span className="glyphicon glyphicon-edit"></span>Modify</Link>
+                        </li>
+                    </>
+                    :
+                    <>
+                        <li><Link to="/register"><span className="glyphicon glyphicon-user"></span> Sign Up</Link></li>
+                        <li><Link to="/login"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
+                    </>
+                }
+                </ul>
             </nav>
         </header>
         <Outlet/>

@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import Footer from './Footer';
 
 function History() {
   const [mounted,setMounted]=useState(false);
@@ -75,6 +76,7 @@ function History() {
           }
         </tbody>
       </table>
+      <Footer/>
     </div>
   )
 }

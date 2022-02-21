@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import axios from 'axios';
 import {useNavigate,Navigate} from "react-router-dom";
 import '../App.css';
+import Footer from './Footer';
 
 function Register() {
   let navigate = useNavigate();
@@ -38,6 +39,7 @@ function Register() {
   //  setState({...state,redirect:true});
   //}
   return (
+    <>
     <section className="section-register">
         <h1>Register:</h1>
         <form action="" method="POST" onSubmit={handleSubmit} className="container register-form">
@@ -69,6 +71,8 @@ function Register() {
           <button type="submit" className="btn btn-default">Register</button>
         </form>
     </section>
+    <Footer/>
+    </>
   )
 }
 export default Register;
