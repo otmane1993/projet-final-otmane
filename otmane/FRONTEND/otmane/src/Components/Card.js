@@ -80,11 +80,11 @@ function Card(props) {
   }
   return (
     <div className="card">
-      <img width="200" height="200" src={`http://127.0.0.1:8000/storage/files/${props.image}`}/>
-      <p>Le sejour est de {props.day} jours</p>
-      <p>Le prix du sejour est {props.price}</p>
-      <p>L'hotel {props.hotel} dans la ville {props.ville}</p>
-      <button className="btn btn-success" onClick={handleClick}>Reserve</button>
+      <img width="400" height="200" src={`http://127.0.0.1:8000/storage/files/${props.image}`}/>
+      <p>Le sejour commence le <span>{props.depart}</span> et dure <span>{props.day} jours</span></p>
+      <p>Le prix du sejour est <span>{props.price} DHs</span></p>
+      <p>Le sejour se deroule dans <span>l'hotel {props.hotel}</span> dans la ville <span>{props.ville}</span></p>
+      <button className="btn btn-primary btn-lg" onClick={handleClick}>Reserver</button>
     </div>
   )
 }

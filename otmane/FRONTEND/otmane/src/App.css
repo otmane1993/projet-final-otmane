@@ -461,3 +461,36 @@ color: white;
   /*margin:0 auto;
   /*display:block;*/
 }
+
+         /***** Card *******/
+
+.card
+{
+  width:50%;
+  margin:20px auto 0 auto;
+  border:blue 3px solid;
+  padding-bottom:20px;
+  background-color:#0082E6;
+  font-size:20px;
+  color:white;
+}
+.card span
+{
+  color:yellow;
+  font-weight:bold;
+}
+
+           /***** Results ******/
+
+.results h2
+{
+  color:#0082E6;
+  font-size:30px;
+}
+
+          /***** Search *****/
+
+.hidden-option
+{
+  visibility:hidden;
+}

@@ -7,11 +7,12 @@ function Results(props) {
   //const [data,setData]=useState([]);
   return (
     <section className="results">
+          <h2>Results:</h2>
           {/*{console.log(props.data)}*/}
           {
             props.data.map((item)=>{
 
-              return <Card day={item.day} price={item.price} hotel={item.hotel} ville={item.ville} image={item.image} sejour={item.sejour}/>
+              return <Card day={item.day} price={item.price} hotel={item.hotel} ville={item.ville} image={item.image} sejour={item.sejour} depart={item.depart}/>
             })
           }
           {/*<Card ville="rabat" image={Farah} hotel="Farah"/>

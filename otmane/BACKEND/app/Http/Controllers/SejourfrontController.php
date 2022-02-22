@@ -45,6 +45,7 @@ class SejourfrontController extends Controller
             $price=($hotel->price)*$day*$request->chambre;
             $sej['day']=$day;
             $sej['price']=$price;
+            $sej['depart']=$sejour->date_depart;
             $sej['hotel']=$hotel->name_hotel;
             $sej['ville']=$ville->name_ville;
             $sej['image']=explode('/',$hotel->image_hotel)[2];
