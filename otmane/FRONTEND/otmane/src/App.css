@@ -452,8 +452,12 @@ color: white;
   background-color:#31B0D5;
   height:400px;
   font-size:80px;
+  color:white;
 }
 .p1
 {
-  text-align:center;
+  /*text-align:center;*/
+  margin-left:300px;
+  /*margin:0 auto;
+  /*display:block;*/
 }

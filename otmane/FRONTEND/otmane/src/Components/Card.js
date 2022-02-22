@@ -80,7 +80,7 @@ function Card(props) {
   }
   return (
     <div className="card">
-      <img width="200" height="200" src={props.image}/>
+      <img width="200" height="200" src={`http://127.0.0.1:8000/storage/files/${props.image}`}/>
       <p>Le sejour est de {props.day} jours</p>
       <p>Le prix du sejour est {props.price}</p>
       <p>L'hotel {props.hotel} dans la ville {props.ville}</p>

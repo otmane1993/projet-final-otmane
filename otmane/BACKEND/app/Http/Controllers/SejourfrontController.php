@@ -47,7 +47,7 @@ class SejourfrontController extends Controller
             $sej['price']=$price;
             $sej['hotel']=$hotel->name_hotel;
             $sej['ville']=$ville->name_ville;
-            $sej['image']=$hotel->image_hotel;
+            $sej['image']=explode('/',$hotel->image_hotel)[2];
             $sej['sejour']=$sejour->id;
             array_push($data,$sej);
             }
