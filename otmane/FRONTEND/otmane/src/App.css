@@ -208,6 +208,13 @@ display: none;
 #check{
 display: none;
 }
+@media screen and (min-width:858px)
+{
+  nav
+  {
+    height:120px !important;
+  }
+}
 @media screen and (max-width:858px)
 {
   /*nav ul h4,nav ul a
@@ -265,6 +272,70 @@ display: none;
     top:-20px;
     /*right:50px;*/
   }
+
+           /***** Responsive barre de search *****/
+
+  .form-search
+  {
+    display:block;
+  }
+  .search form
+  {
+    width:80%;
+    margin:10px auto;
+  }
+
+               /***** Responsive Login *****/
+
+  .section-login form
+  {
+    width:60%;
+  }
+  .section-register form
+  {
+    width:60%;
+  }
+  
+}
+@media screen and (min-width:600px)
+{
+  .card
+  {
+    width:50%;
+  }
+  .modify-form
+  {
+    width:50%;
+  }
+}
+@media screen and (max-width:600px)
+{
+  .card
+  {
+    width:90%;
+  }
+  .modify-form
+  {
+    width:80%;
+  }
+}
+@media screen and (max-width:800px)
+{
+  .results img
+  {
+    width:250px !important;
+  }
+}
+@media screen and (max-width:458px)
+{
+  .section-login form
+  {
+    width:90%;
+  }
+  .section-register form
+  {
+    width:90%;
+  }
 }
 .show
 {
@@ -275,6 +346,8 @@ display: none;
 {
   height:350px;
 }
+
+
 
 
 
@@ -447,7 +520,7 @@ footer h2
 }
 .modify-form
 {
-  width:50%;
+  /*width:50%;*/
   margin-top:50px;
   margin-bottom:50px;
 }
@@ -546,7 +619,7 @@ color: white;
 
 .card
 {
-  width:50%;
+  /*width:50%;*/
   margin:20px auto 0 auto;
   border:blue 3px solid;
   padding-bottom:20px;
