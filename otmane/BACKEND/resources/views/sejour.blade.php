@@ -2,15 +2,16 @@
 
 @section('content')
 <div>
-    <ul>
+    <ul class="sidebar">
+            <img width="100" height="100" src="{{Storage::url('public/files/Logo-agencia.png')}}"/>
         <li>
-            <a href="{{Route('hotel')}}" class="hotel">Hotels</a>
+            <a href="{{route('hotel')}}" class="hotel"><i class="fa fa-hotel"></i>Hotels</a>
         </li>
         <li>
-            <a href="{{route('ville')}}" class="ville">Villes</a>
+            <a href="{{route('ville')}}" class="ville"><i class="fa fa-city"></i>Villes</a>
         </li>
         <li>
-            <a href="{{route('sejour')}}" class="sejour">Sejours</a>
+            <a href="{{route('sejour')}}" class="sejour"><i class="fa fa-calendar-day"></i>Sejours</a>
         </li>
     </ul>
 </div>
