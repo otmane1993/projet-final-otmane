@@ -15,23 +15,57 @@ function Search(props) {
         axios.post('http://127.0.0.1:8000/api/search',input)
         .then((res)=>{
             //console.log(res.data);
+            /*if(res.status===401)
+            {
+                console.log(res.data);
+            }*/
             setData(res.data);
             //props.fetch(data);
-        });
+        })
+
+
+
+        /*const token=localStorage.getItem('token');
+        axios.post('http://127.0.0.1:8000/api/search',input, {
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer '+token
+          },      
+        })      
+        .then((res) => {
+            console.log(res.data);
+            setData(res.data);
+        })
+        .catch((error) => {
+            //console.log(error);
+            if(error.response.status===401)
+            {
+                console.log(error);
+            }
+        })
+        /*.catch((err)=>{
+            console.log(err);
+            
+        });*/
+
+
+        
     }
     const [data,setData]=useState([]);
+    const [switche,setSwitche]=useState(false);
     const [mounted,setMounted]=useState(false);
-    const [date,setDate]=useState('2022-02-22');
-    const [datee,setDatee]=useState('2022-02-23');
+    const [date,setDate]=useState('');
+    const [datee,setDatee]=useState('');
+    const [error,setError]=useState([]);
     const [input,setInput]=useState({
         destination:'Selectionnez une ville',
         depart:'',
         arrive:'',
-        chambre:'',
+        chambre:1,
         sejour:0,
         villes:[],
     });
-    const formDate=()=>
+    /*const formDate=()=>
     {
         const d=new Date();
         let dd=d.getDate();
@@ -54,16 +88,32 @@ function Search(props) {
         let newDatee=yy+'-'+mm+'-'+ddd;
         setDate(newDate);
         setDatee(newDatee);
-    }
+    }*/
     if(!mounted)
     {
         //formDate();
         axios.get('http://127.0.0.1:8000/api/villes').then((res)=>{
             //console.log(res.data);
             setInput({...input,villes:res.data});
+        //}).then((res)=>{
+            axios.get('http://127.0.0.1:8000/api/date').then((rese)=>{
+            //console.log(rese.data);
+            setDate(rese.data.depart);
+            setDatee(rese.data.arrive);
+            setTimeout(()=>{setSwitche(true)},100);
+            /*setInput({...input,depart:date});
+            setInput({...input,arrive:datee});*/   
+        })
         });
     }
-
+    useState(()=>{
+        setInput({...input,depart:250,arrive:300});
+        setTimeout(()=>{console.log(date)},1000);  
+    },[switche]);
+    /*useState(()=>{
+        setInput({...input,arrive:datee});
+        console.log('Arrive');
+    },[datee]);*/
     useEffect(()=>{
         setMounted(true);  
     },[]);
@@ -87,11 +137,11 @@ function Search(props) {
             </div>
             <div className="form-group form-search">
                 <label htmlFor="depart">Depart</label>
-                <input type="date" value={date} name="depart" id="depart" className="form-control input-search" onChange={(e)=>{setInput({...input,depart:e.target.value})}}/>
+                <input type="date" value={date} name="depart" id="depart" className="form-control input-search" onChange={(e)=>{setDate(e.target.value);setInput({...input,depart:e.target.value})}}/>
             </div>
             <div className="form-group form-search">
                 <label htmlFor="arrive">Arrive</label>
-                <input type="date" name="arrive" value={datee} id="arrive" className="form-control input-search" onChange={(e)=>{setInput({...input,arrive:e.target.value})}}/>
+                <input type="date" name="arrive" value={datee} id="arrive" className="form-control input-search" onChange={(e)=>{setDatee(e.target.value);setInput({...input,arrive:e.target.value})}}/>
             </div>
             <div className="form-group form-search">
                 <label htmlFor="chambre">Chambres</label>

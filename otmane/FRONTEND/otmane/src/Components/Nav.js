@@ -10,6 +10,7 @@ import logo from '../Images/logo.png';
 function Nav() {
     let navigate=useNavigate();
     const [switche,setSwitche]=useState(false);
+    const [showNave,setShowNave]=useState(false);
     const [redirect,setRedirect]=useState(false);
     const [token,setToken]=useState(null);
     const [tokene,setTokene]=useState('');
@@ -24,7 +25,10 @@ function Nav() {
         setToken(null);
         setRedirect(true);       
     };
-
+    const showNav=(e)=>
+    {
+        setShowNave(!showNave);                  
+    }
     if(!mounted)
     {
         setInterval(()=>{
@@ -33,7 +37,7 @@ function Nav() {
                 setSwitche(true);
             }
         },1000);
-        console.log('otmane KSAANI');
+        //console.log('otmane KSAANI');
         if(localStorage.getItem('token'))
         {
             //setSwitche(true);
@@ -102,13 +106,13 @@ function Nav() {
                     </ul>
                 </div>
                     </nav>*/}
-            <nav>
+            <nav className={(showNave)?'heigh':''}>
                 <input type="checkbox" id="check"/>
-                <label for="check" class="check-btn">
+                <label for="check" className="check-btn">
                 <i class="fas fa-bars"></i>
                 </label>
                 <Link className="navbar-brand" to="/"><img src={logo} width="100" height="100"/></Link>
-                <ul>
+                <ul className={(showNave)?'show':''}>
                 {
                     //localStorage.getItem('token')
                     switche
@@ -131,6 +135,7 @@ function Nav() {
                     </>
                 }
                 </ul>
+                <div className="hiddene" onClick={showNav}></div>
             </nav>
         </header>
         <Outlet/>

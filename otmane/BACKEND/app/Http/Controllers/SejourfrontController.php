@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Sejour;
 use App\Hotel;
 use App\Ville;
@@ -16,6 +17,15 @@ class SejourfrontController extends Controller
      */
     public function search(Request $request)
     {
+        $validator=Validator::make($request->all(),[
+            'destination'=>['required','not_in:Selectionnez une ville'],
+            'depart'=>['required'],
+            'arrive'=>['required'],
+        ]);
+        if($validator->fails())
+        {
+            return response()->json(['error'=>$validator->errors()],401);
+        }
         $sejours=Sejour::all();
         $data=array();
         foreach($sejours as $sejour)

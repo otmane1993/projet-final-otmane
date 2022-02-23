@@ -6,6 +6,7 @@ use App\Http\Controllers\authController;
 use App\Http\Controllers\SejourfrontController;
 use App\Http\Controllers\VillefrontController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\dateController;
 use App\Http\Controllers\ReservationController;
 
 /*
@@ -28,6 +29,7 @@ Route::get('/sejours',[SejourfrontController::class,'index']);
 Route::post('/search',[SejourfrontController::class,'search']);
 Route::get('/villes',[VillefrontController::class,'index']);
 Route::post('/user',[UserController::class,'fetch']);
+Route::get('/date',[dateController::class,'index']);
 Route::prefix('/user')->group(function(){
     Route::put('/update/{id}',[UserController::class,'update']);
 });

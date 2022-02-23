@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Ville;
 
-class VillefrontController extends Controller
+class dateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +13,10 @@ class VillefrontController extends Controller
      */
     public function index()
     {
-        $villes=Ville::all();
-        //dd($villes);
-        //$data=[];
-        //$date=date("Y-m-d");
-        //array_push($villes,$date);
-        //array_push($data,$villes);
-        return response()->json($villes);
+        $date=date("Y-m-d");
+        $datee=date('Y-m-d', strtotime($date. ' + 1 days'));
+        $data=array("depart"=>$date,"arrive"=>$datee);
+        return response()->json($data);
     }
 
     /**
