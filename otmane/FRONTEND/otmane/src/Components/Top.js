@@ -17,17 +17,11 @@ function Top() {
           <Card ville="tanger" image={Moughane} hotel="Moughane"/>
           <Card ville="casablanca" image={Twin} hotel="Twin"/>
   </div>*/}
-  <Carousel>
-                <div>
-                  <CardTop ville="rabat" image={Farah} hotel="Farah"/>
-                </div>
-                <div>
-                  <CardTop ville="tanger" image={Moughane} hotel="Moughane"/>
-                </div>
-                <div>
-                  <CardTop ville="casablanca" image={Twin} hotel="Twin"/>
-                </div>
-            </Carousel>
+        <Carousel>         
+          <CardTop ville="rabat" image={Farah} hotel="Farah" day="3" price="1500" ville="Casablanca" depart="22-02-2022"/>
+          <CardTop ville="tanger" image={Moughane} hotel="Moughane" day="5" price="2500" ville="Tanger" depart="25-02-2022"/>
+          <CardTop ville="casablanca" image={Twin} hotel="Twin" day="7" price="2000" ville="Fes" depart="25-02-2022"/>
+        </Carousel>
     </section>
   )
 }

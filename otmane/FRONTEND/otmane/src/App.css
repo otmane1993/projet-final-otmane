@@ -106,7 +106,7 @@ section.search
 }
 .section-login
 {
-  background:url('./Images/font-login.jpeg') no-repeat;
+  background:url('./Images/fond-login.jpg') no-repeat;
   background-size:cover;
   padding-top:20px;
   padding-bottom:20px;
@@ -125,7 +125,7 @@ section.search
 }
 .section-register
 {
-  background:url('./Images/font-login.jpeg') no-repeat;
+  background:url('./Images/fond-login.jpg') no-repeat;
   background-size:cover;
   padding-top:20px;
   padding-bottom:20px;
@@ -319,6 +319,20 @@ display: none;
     width:80%;
   }
 }
+@media screen and (min-width:485px)
+{
+  .thanks
+  {
+    font-size:80px;
+  }
+}
+@media screen and (max-width:485px)
+{
+  .thanks
+  {
+    font-size:60px;
+  }
+}
 @media screen and (max-width:800px)
 {
   .results img
@@ -346,6 +360,8 @@ display: none;
 {
   height:350px;
 }
+
+
 
 
 
@@ -526,6 +542,7 @@ footer h2
 }
 .message-modify
 {
+  border-radius:5px;
   width:30%;
   height:50px;
   background-color:#31B0D5;
@@ -549,14 +566,22 @@ height: 600px;
 /*width: 600px;*/
 position: relative;
 }
-
+@media screen and (min-width:888px)
+{
+  .err
+  {
+    position:absolute;
+    left: 45%;
+    top: 8%;
+  }
+}
 .err {
   color: #ffffff;
   font-family: 'Nunito Sans', sans-serif;
   font-size: 11rem;
-  position:absolute;
+  /*position:absolute;
   left: 45%;
-  top: 8%;
+  top: 8%;*/
   /*margin-right:auto;
   margin-left:auto;*/
 }
@@ -604,15 +629,18 @@ color: white;
 {
   background-color:#31B0D5;
   height:400px;
-  font-size:80px;
+  /*font-size:80px;*/
   color:white;
 }
+@media screen and (min-width:1082px)
+{
 .p1
 {
   /*text-align:center;*/
-  margin-left:300px;
+  /*margin-left:300px;
   /*margin:0 auto;
   /*display:block;*/
+}
 }
 
          /***** Card *******/
@@ -646,4 +674,15 @@ color: white;
 .hidden-option
 {
   visibility:hidden;
+}
+
+          /***** Top sejours ******/
+
+.Top h1
+{
+  color:#0082E6;
+}
+.carousel button
+{
+  color:blue;
 }
