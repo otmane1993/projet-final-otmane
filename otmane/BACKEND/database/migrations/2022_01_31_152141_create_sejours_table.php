@@ -17,9 +17,17 @@ class CreateSejoursTable extends Migration
             $table->id();
             $table->dateTime('date_depart');
             $table->dateTime('date_arrive');
-            $table->integer('hotel_id');
-            $table->integer('ville_id');
+            //$table->unsignedBigInteger('hotel_id')->nullable();
+            //$table->unsignedBigInteger('ville_id')->nullable();
+            $table->unsignedBigInteger('hotel_id');
+            $table->unsignedBigInteger('ville_id');
+            $table->foreign('hotel_id')->references('id')->on('hotels')->onDelete('cascade')->onUpdate('cascade')->unsigned();
+            $table->foreign('ville_id')->references('id')->on('villes')->onDelete('cascade')->onUpdate('cascade')->unsigned();
             $table->timestamps();
+
+            
+            //$table->foreignId('hotel_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            //$table->foreignId('ville_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

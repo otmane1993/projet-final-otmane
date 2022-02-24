@@ -15,8 +15,10 @@ class CreateUsersOfSejoursTable extends Migration
     {
         Schema::create('users_of_sejours', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('sejour_id')->constrained();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('sejour_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('sejour_id')->references('id')->on('sejours')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

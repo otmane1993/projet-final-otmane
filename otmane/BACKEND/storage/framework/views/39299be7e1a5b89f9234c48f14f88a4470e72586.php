@@ -18,6 +18,8 @@
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/43565e0527.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!-- Styles -->
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
 </head>
@@ -80,6 +82,15 @@
             <?php echo $__env->yieldContent('content'); ?>
         </main>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        flatpickr('input[type="date"]', {
+            enableTime:true,
+            altInput:true,
+            altFormat:'d M Y',
+            dateFormat:'Y-m-d',
+        });
+    </script>
 </body>
 </html>
 <?php /**PATH C:\xampp\htdocs\Projet-final\otmane\BACKEND\resources\views/layouts/app.blade.php ENDPATH**/ ?>

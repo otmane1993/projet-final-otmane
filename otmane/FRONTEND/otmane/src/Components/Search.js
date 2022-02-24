@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import '../App.css';
+import Flatpickr from "react-flatpickr";
+import "flatpickr/dist/themes/material_green.css";
 
 function Search(props) {
     const handleRoom=()=>
@@ -54,6 +56,7 @@ function Search(props) {
     const [data,setData]=useState([]);
     const [switche,setSwitche]=useState(false);
     const [mounted,setMounted]=useState(false);
+    //const [dat,setDat]=useState(new Date());
     const [date,setDate]=useState('');
     const [datee,setDatee]=useState('');
     const [error,setError]=useState([]);
@@ -138,6 +141,7 @@ function Search(props) {
             <div className="form-group form-search">
                 <label htmlFor="depart">Depart</label>
                 <input type="date" value={date} name="depart" id="depart" className="form-control input-search" onChange={(e)=>{setDate(e.target.value);setInput({...input,depart:e.target.value})}}/>
+                {/*<Flatpickr data-enable-time options={{altFormat:'d M Y',dateFormat:'Y-m-d'}} value={input.depart} onChange={(e) => { setInput({...input,depart:e.target.value}); }}/>*/}
             </div>
             <div className="form-group form-search">
                 <label htmlFor="arrive">Arrive</label>

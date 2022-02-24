@@ -33,7 +33,7 @@
             </div>
             <div class="form-group">
                 <label for="image">Telecharger l'image:</label>
-                <input type="file" id="image" name="image" class="form-control">
+                <input type="file" id="image" name="image" class="form-control @error('image') is-invalid @enderror">
                 @error('image')
                 <p class="par-error">{{$message}}</p>
                 @enderror

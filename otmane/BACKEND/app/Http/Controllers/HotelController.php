@@ -43,6 +43,7 @@ class HotelController extends Controller
         $validate=$request->validate([
                 'price' => 'required',
                 'name' => 'required',
+                'image' =>'required',
             ]);
         //$val = Validator::make($request->all(),[
         //    'price' => 'required',
@@ -104,6 +105,7 @@ class HotelController extends Controller
         $validate=$request->validate([
             'price' => 'required',
             'name' => 'required',
+
         ]);
         $hotel=Hotel::find($id);
         $image=$hotel->image_hotel;

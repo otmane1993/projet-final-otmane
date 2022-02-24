@@ -18,10 +18,10 @@
         <h2>Nom de l'hotel:</h2>
         <p><?php echo e($hotel->name_hotel); ?></p>
         <h2>Prix de l'hotel:</h2>
-        <p><?php echo e($hotel->price); ?></p>
+        <p><?php echo e($hotel->price); ?> DHs</p>
         <h2>L'image de l'hotel:</h2>
         <img height="200" width="200" src="<?php echo e(Storage::url($hotel->image_hotel)); ?>">
-        <a class="btn btn-success" href="<?php echo e(route('hotel')); ?>" style="display:block;width:20%;">Retour</a>
+        <a class="btn btn-success" href="<?php echo e(route('hotel')); ?>" style="display:block;width:20%;margin-top:10px;">Retour</a>
     </div>
 </div>
 <?php $__env->stopSection(); ?>
