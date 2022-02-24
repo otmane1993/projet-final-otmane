@@ -54,7 +54,7 @@ class SejourController extends Controller
             'hotel_id'=>$request->hotel,
             'ville_id'=>$request->ville,
         ]);
-        Session::put('message-sejour','Sejour cree ave succes');
+        Session::flash('message-sejour','Sejour cree ave succes');
         return redirect()->route('sejour');
     }
 
@@ -111,6 +111,7 @@ class SejourController extends Controller
         $sejour->hotel_id=$request->hotel;
         $sejour->ville_id=$request->ville;
         $sejour->save();
+        Session::flash('update-sejour','Sejour updated successfully');
         return redirect()->route('sejour'); 
     }
 

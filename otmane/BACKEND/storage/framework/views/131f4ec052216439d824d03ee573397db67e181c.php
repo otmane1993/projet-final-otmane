@@ -23,7 +23,7 @@
         <p><?php echo e($sejour->date_depart); ?></p>
         <h2>date d'arrive:</h2>
         <p><?php echo e($sejour->date_arrive); ?></p>
-        <a class="btn btn-success" href="<?php echo e(route('sejour')); ?>" style="display:block;">Retour</a>
+        <a class="btn btn-success" href="<?php echo e(route('sejour')); ?>" style="display:block;width:20%;">Retour</a>
     </div>
 </div>
 <?php $__env->stopSection(); ?>

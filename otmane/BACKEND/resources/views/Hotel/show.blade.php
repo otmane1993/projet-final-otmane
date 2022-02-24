@@ -21,7 +21,7 @@
         <p>{{$hotel->price}}</p>
         <h2>L'image de l'hotel:</h2>
         <img height="200" width="200" src="{{Storage::url($hotel->image_hotel)}}">
-        <a class="btn btn-success" href="{{route('hotel')}}" style="display:block;">Retour</a>
+        <a class="btn btn-success" href="{{route('hotel')}}" style="display:block;width:20%;">Retour</a>
     </div>
 </div>
 @endsection

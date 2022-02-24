@@ -48,10 +48,10 @@
         </table>
         {{$hotels->links()}}
         @if(Session::has('message-hotel'))
-        <p>{{Session::get('message-hotel')}}</p>
+        <p class="message-session">{{Session::get('message-hotel')}}</p>
         @endif
         @if(Session::has('update-hotel'))
-        <p>{{Session::get('update-hotel')}}</p>
+        <p class="message-session">{{Session::get('update-hotel')}}</p>
         @endif
     </div>
 </div>

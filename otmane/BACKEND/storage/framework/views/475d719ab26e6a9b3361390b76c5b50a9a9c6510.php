@@ -49,10 +49,10 @@
         <?php echo e($hotels->links()); ?>
 
         <?php if(Session::has('message-hotel')): ?>
-        <p><?php echo e(Session::get('message-hotel')); ?></p>
+        <p class="message-session"><?php echo e(Session::get('message-hotel')); ?></p>
         <?php endif; ?>
         <?php if(Session::has('update-hotel')): ?>
-        <p><?php echo e(Session::get('update-hotel')); ?></p>
+        <p class="message-session"><?php echo e(Session::get('update-hotel')); ?></p>
         <?php endif; ?>
     </div>
 </div>

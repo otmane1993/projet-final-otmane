@@ -39,7 +39,7 @@
         <?php echo e($villes->links()); ?>
 
         <?php if(Session::has('message-ville')): ?>
-        <p><?php echo e(Session::get('message-ville')); ?></p>
+        <p class="message-session"><?php echo e(Session::get('message-ville')); ?></p>
         <?php endif; ?>
     </div>
 </div>

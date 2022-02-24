@@ -23,7 +23,7 @@
         <p>{{$sejour->date_depart}}</p>
         <h2>date d'arrive:</h2>
         <p>{{$sejour->date_arrive}}</p>
-        <a class="btn btn-success" href="{{route('sejour')}}" style="display:block;">Retour</a>
+        <a class="btn btn-success" href="{{route('sejour')}}" style="display:block;width:20%;">Retour</a>
     </div>
 </div>
 @endsection

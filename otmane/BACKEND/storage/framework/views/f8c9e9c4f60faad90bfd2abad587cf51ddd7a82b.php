@@ -55,10 +55,10 @@
         <?php echo e($sejours->links()); ?>
 
         <?php if(Session::has('message-sejour')): ?>
-        <p><?php echo e(Session::get('message-sejour')); ?></p>
+        <p class="message-session"><?php echo e(Session::get('message-sejour')); ?></p>
         <?php endif; ?>
         <?php if(Session::has('update-sejour')): ?>
-        <p><?php echo e(Session::get('update-sejour')); ?></p>
+        <p class="message-session"><?php echo e(Session::get('update-sejour')); ?></p>
         <?php endif; ?>
     </div>
 </div>

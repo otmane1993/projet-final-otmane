@@ -30,7 +30,7 @@
                     @endforeach
                 </select>
                 @error('ville')
-                <p>{{$message}}</p>
+                <p class="par-error">{{$message}}</p>
                 @enderror
             </div>
             <div class="form-group">
@@ -45,21 +45,21 @@
                     @endforeach
                 </select>
                 @error('hotel')
-                <p>{{$message}}</p>
+                <p class="par-error">{{$message}}</p>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="date-depart">Date de depart:</label>
                 <input type="date" class="form-control" name="date_depart" id="date_depart" value="{{$sejour->date_depart}}">
                 @error('date-depart')
-                <p>{{$message}}</p>
+                <p class="par-error">{{$message}}</p>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="date-arrive">Date d'arrive:</label>
                 <input type="date" class="form-control" name="date_arrive" id="date_arrive" value="{{$sejour->date_arrive}}">
                 @error('date-arrive')
-                <p>{{$message}}</p>
+                <p class="par-error">{{$message}}</p>
                 @enderror
             </div>
             <div class="form-group">

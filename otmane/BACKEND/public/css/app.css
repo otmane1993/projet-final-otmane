@@ -11059,3 +11059,18 @@ main
 {
   background-color:blue;
 }
+.message-session
+{
+  width:30%;
+  height:40px;
+  background-color:#0082E6;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:5px;
+}
+.par-error
+{
+  color:red;
+}

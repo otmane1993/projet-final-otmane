@@ -22,14 +22,14 @@
                 <label for="name">Nom de l'hotel:</label>
                 <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{$hotel->name_hotel}}">
                 @error('name')
-                <p>{{$message}}</p>
+                <p class="par-error">{{$message}}</p>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="price">Prix de l'hotel:</label>
                 <input type="number" id="price" name="price" class="form-control @error('price') is-invalid @enderror" value="{{$hotel->price}}">
                 @error('price')
-                <p>{{$message}}</p>
+                <p class="par-error">{{$message}}</p>
                 @enderror
             </div>
             <div class="form-group">

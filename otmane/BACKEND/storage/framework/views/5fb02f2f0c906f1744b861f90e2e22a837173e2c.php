@@ -32,7 +32,7 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                <p><?php echo e($message); ?></p>
+                <p class="par-error"><?php echo e($message); ?></p>
                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -53,7 +53,7 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                <p><?php echo e($message); ?></p>
+                <p class="par-error"><?php echo e($message); ?></p>
                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -62,6 +62,16 @@ unset($__errorArgs, $__bag); ?>
             <div class="form-group">
                 <label for="image">Telecharger l'image:</label>
                 <input type="file" id="image" name="image" class="form-control">
+                <?php $__errorArgs = ['image'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                <p class="par-error"><?php echo e($message); ?></p>
+                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
             </div>
             <div class="form-group">
                 <input type="submit" value="create" class="btn btn-success">

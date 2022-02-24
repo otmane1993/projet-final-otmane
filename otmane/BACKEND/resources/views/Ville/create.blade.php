@@ -21,7 +21,7 @@
                 <label for="name">Nom de la ville:</label>
                 <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror">
                 @error('name')
-                <p>{{$message}}</p>
+                <p class="par-error">{{$message}}</p>
                 @enderror
             </div>
             <div class="form-group">

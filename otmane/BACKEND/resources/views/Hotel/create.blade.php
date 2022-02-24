@@ -21,19 +21,22 @@
                 <label for="name">Nom de l'hotel:</label>
                 <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror">
                 @error('name')
-                <p>{{$message}}</p>
+                <p class="par-error">{{$message}}</p>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="price">Prix de l'hotel:</label>
                 <input type="number" id="price" name="price" class="form-control @error('price') is-invalid @enderror">
                 @error('price')
-                <p>{{$message}}</p>
+                <p class="par-error">{{$message}}</p>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="image">Telecharger l'image:</label>
                 <input type="file" id="image" name="image" class="form-control">
+                @error('image')
+                <p class="par-error">{{$message}}</p>
+                @enderror
             </div>
             <div class="form-group">
                 <input type="submit" value="create" class="btn btn-success">

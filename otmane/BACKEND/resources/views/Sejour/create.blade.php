@@ -21,14 +21,14 @@
                 <label for="depart">Date de depart:</label>
                 <input type="date" class="form-control @error('depart') is-invalid @enderror" id="depart" name="depart">
                 @error('depart')
-                <p>{{$message}}</p>
+                <p class="par-error">{{$message}}</p>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="arrive">Date d'arrive:</label>
                 <input type="date" class="form-control @error('arrive') is-invalid @enderror" id="arrive" name="arrive">
                 @error('arrive')
-                <p>{{$message}}</p>
+                <p class="par-error">{{$message}}</p>
                 @enderror
             </div>
             <div class="form-group">
