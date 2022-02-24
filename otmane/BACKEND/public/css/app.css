@@ -10992,7 +10992,8 @@ i
   padding-left:10px;
   background-color:#227DC7;
   width:20%;
-  min-height: 100% !important;
+  /*min-height: 100% !important;*/
+  height:100vh;
   position:relative;
   /*position:fixed;
   bottom:0;
@@ -11045,4 +11046,16 @@ main
 .add
 {
   margin-bottom:10px;
+}
+
+
+       /******* Page d'acceuil  ******/
+
+.welcome-content
+{
+  
+}
+.dashboard-welcome
+{
+  background-color:blue;
 }
