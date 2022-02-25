@@ -4,21 +4,17 @@ import Moughane from '../Images/Moughane.png';
 import Farah from '../Images/Farah.png';
 import Card from './Card';
 function Results(props) {
-  //const [data,setData]=useState([]);
   return (
     <section className="results">
           <h2>Results:</h2>
           {(props.message)?<p className="nosejour">{props.message}</p>:<p></p>}
-          {/*{console.log(props.data)}*/}
+          {(props.mesError)?<p className="nosejour">{props.mesError}</p>:<p></p>}
           {
             props.data.map((item)=>{
 
               return <Card day={item.day} price={item.price} hotel={item.hotel} ville={item.ville} image={item.image} sejour={item.sejour} depart={item.depart}/>
             })
           }
-          {/*<Card ville="rabat" image={Farah} hotel="Farah"/>
-          <Card ville="tanger" image={Moughane} hotel="Moughane"/>
-        <Card ville="casablanca" image={Twin} hotel="Twin"/>*/}
     </section>
   )
 }

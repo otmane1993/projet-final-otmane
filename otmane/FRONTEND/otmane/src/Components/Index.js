@@ -8,15 +8,16 @@ import Footer from './Footer';
 function Index() {
   const [show,setShow]=useState(false);
   const [data,setData]=useState([]);
-  const [message,setMessage]=useState('');
+  const [mesage,setMesage]=useState('');
+  const [mesError,setMesError]=useState('');
   //const changeShowe=(bool)=>
   //{
   //  setShowe(bool);
   //}
   return (
     <>
-        <Search change={(bool)=>{setShow(bool)}} fetch={(array)=>{setData(array)}} mess={(txt)=>{setMessage(txt)}}/>
-        {(show)?<Results data={data} message={message}/>:null}
+        <Search change={(bool)=>{setShow(bool)}} fetch={(array)=>{setData(array)}} mess={(txt)=>{setMesage(txt)}} error={(err)=>{setMesError(err)}}/>
+        {(show)?<Results data={data} message={mesage} mesError={mesError}/>:null} 
         <Top/>
         <Footer/>
     </>
