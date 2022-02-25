@@ -8,6 +8,7 @@ function Results(props) {
   return (
     <section className="results">
           <h2>Results:</h2>
+          {(props.message)?<p className="nosejour">{props.message}</p>:<p></p>}
           {/*{console.log(props.data)}*/}
           {
             props.data.map((item)=>{

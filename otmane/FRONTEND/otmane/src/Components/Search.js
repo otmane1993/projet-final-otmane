@@ -13,6 +13,7 @@ function Search(props) {
     {
         e.preventDefault();
         //setShow(true);
+        setSubmited(true);
         props.change(true);
         axios.post('http://127.0.0.1:8000/api/search',input)
         .then((res)=>{
@@ -25,6 +26,16 @@ function Search(props) {
             }
             else{
                setData(res.data);
+               setSwitcha(!switcha);
+               /*if(data.length===0)
+               {
+                    setMessage('There is no sejour Available for this date and this city');
+                    //console.log('mou3e');
+               }
+               else
+               {
+                    setMessage('');
+               }*/
                setError(
                 {error:{
                     destination:'',
@@ -65,10 +76,13 @@ function Search(props) {
         
     }
     const [data,setData]=useState([]);
+    const [submited,setSubmited]=useState(false);
     const [switche,setSwitche]=useState(false);
+    const [switcha,setSwitcha]=useState(false);
     const [mounted,setMounted]=useState(false);
     //const [dat,setDat]=useState(new Date());
     const [date,setDate]=useState('');
+    const [message,setMessage]=useState('');
     const [datee,setDatee]=useState('');
     const [error,setError]=useState({
         error:{
@@ -126,10 +140,10 @@ function Search(props) {
         })
         });
     }
-    useState(()=>{
+    /*useState(()=>{
         setInput({...input,depart:250,arrive:300});
         setTimeout(()=>{console.log(date)},1000);  
-    },[switche]);
+    },[switche]);*/
     /*useState(()=>{
         setInput({...input,arrive:datee});
         console.log('Arrive');
@@ -138,7 +152,25 @@ function Search(props) {
         setMounted(true);  
     },[]);
     useEffect(()=>{
-        props.fetch(data);  
+        if(submited)
+        {
+        if(data.length===0)
+        {
+                setMessage('There is no sejour Available for this date and this city');
+                //console.log('mou3e');
+                //props.mess(message);
+        }
+        else
+        {
+                setMessage('');
+        }
+        props.mess(message);
+        //console.log('boubou');
+    }       
+    },[switcha]);
+    useEffect(()=>{
+        props.fetch(data);
+        //props.mess(message);  
     },[data]);
   return (
     <section className="search">
