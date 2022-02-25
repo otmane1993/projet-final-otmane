@@ -17,11 +17,22 @@ function Search(props) {
         axios.post('http://127.0.0.1:8000/api/search',input)
         .then((res)=>{
             //console.log(res.data);
-            /*if(res.status===401)
+            if(res.status===201)
             {
-                console.log(res.data);
-            }*/
-            setData(res.data);
+                //console.log(res.data);
+                setError(res.data);
+                setData([]);
+            }
+            else{
+               setData(res.data);
+               setError(
+                {error:{
+                    destination:'',
+                    depart:'',
+                    arrive:'',
+                }}
+               ); 
+            }
             //props.fetch(data);
         })
 
@@ -59,7 +70,13 @@ function Search(props) {
     //const [dat,setDat]=useState(new Date());
     const [date,setDate]=useState('');
     const [datee,setDatee]=useState('');
-    const [error,setError]=useState([]);
+    const [error,setError]=useState({
+        error:{
+            destination:'',
+            depart:'',
+            arrive:'',
+        }
+    });
     const [input,setInput]=useState({
         destination:'Selectionnez une ville',
         depart:'',
@@ -125,10 +142,10 @@ function Search(props) {
     },[data]);
   return (
     <section className="search">
-        <form class="formulaire-search" onSubmit={handleSubmit}>
+        <form class="formulaire-search" method="POST" onSubmit={handleSubmit}>
             <div className="form-group form-search">
                 <label htmlFor="destination">Destination</label>
-                <select name="destination" value={input.destination} id="destination" className="form-control input-search" onChange={(e)=>{setInput({...input,destination:e.target.value})}}>
+                <select name="destination" value={input.destination} id="destination" className={(error.error.destination?"is-invalid ":"")+"form-control input-search"} onChange={(e)=>{setInput({...input,destination:e.target.value})}}>
                     <option className="hidden-option" value="Selectionnez une ville">Selectionnez une ville</option>
                     {input.villes.map((item)=>{
                         return <option value={item.name_ville}>{item.name_ville}</option>
@@ -140,12 +157,12 @@ function Search(props) {
             </div>
             <div className="form-group form-search">
                 <label htmlFor="depart">Depart</label>
-                <input type="date" value={date} name="depart" id="depart" className="form-control input-search" onChange={(e)=>{setDate(e.target.value);setInput({...input,depart:e.target.value})}}/>
+                <input type="date" value={date} name="depart" id="depart" className={(error.error.depart?"is-invalid ":"")+"form-control input-search"} onChange={(e)=>{setDate(e.target.value);setInput({...input,depart:e.target.value})}}/>
                 {/*<Flatpickr data-enable-time options={{altFormat:'d M Y',dateFormat:'Y-m-d'}} value={input.depart} onChange={(e) => { setInput({...input,depart:e.target.value}); }}/>*/}
             </div>
             <div className="form-group form-search">
                 <label htmlFor="arrive">Arrive</label>
-                <input type="date" name="arrive" value={datee} id="arrive" className="form-control input-search" onChange={(e)=>{setDatee(e.target.value);setInput({...input,arrive:e.target.value})}}/>
+                <input type="date" name="arrive" value={datee} id="arrive" className={(error.error.arrive?"is-invalid ":"")+"form-control input-search"} onChange={(e)=>{setDatee(e.target.value);setInput({...input,arrive:e.target.value})}}/>
             </div>
             <div className="form-group form-search">
                 <label htmlFor="chambre">Chambres</label>

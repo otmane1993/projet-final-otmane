@@ -700,3 +700,16 @@ color: white;
   top: 0;
   width: auto;
 }*/
+
+.card img
+{
+  width:100% !important;
+}
+.section-register h1,.section-login h1
+{
+  color:#0082E6;
+}
+.is-invalid
+{
+  border:2px solid red;
+}
