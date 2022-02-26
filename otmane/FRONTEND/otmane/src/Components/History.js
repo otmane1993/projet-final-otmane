@@ -37,7 +37,7 @@ function History() {
   useEffect(()=>{
     axios.get(`http://127.0.0.1:8000/api/reservation/fetch/${user}`).then((res)=>{
      setData(res.data);
-         setBoole(true)
+         setTimeout(()=>{setBoole(true)},1000);
     });
   },[bool]);
   return (
