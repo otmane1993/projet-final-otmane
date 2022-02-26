@@ -18,7 +18,6 @@ function History() {
       axios({
           method: 'post',
           url: 'http://127.0.0.1:8000/api/user',
-          //withCredentials: true,
           crossdomain: true,
           data: Object.keys(reqData).map(function(key) {
               return encodeURIComponent(key) + '=' + encodeURIComponent(reqData[key])
@@ -33,24 +32,16 @@ function History() {
           setBool(true);
       });
       (bool)?console.log('otmane'):Swal.fire('Wait...');
+      (boole)?Swal.fire('data ready'):console.log('otmane');
   }
-  if(bool)
-  {
+  useEffect(()=>{
     axios.get(`http://127.0.0.1:8000/api/reservation/fetch/${user}`).then((res)=>{
-     console.log(res.data);
      setData(res.data);
-     //Swal.fire('Data is ready');
-     /*setBoole(true);
-     (boole)?Swal.fire('Data is ready'):console.log('close sweet');
-     setBoole(false);*/
-     //(boole)?Swal.fire('Data is ready'):console.log('close sweet');
+         setBoole(true)
     });
-    (data)?console.log('otmane'):Swal.fire('Wait...');
-    
-    //setBoole(false);
-  }
+  },[bool]);
   return (
-    <div>
+    <div className="history">
       <h1>History:</h1>
       <table className="table table-striped table-bordered">
         <thead>

@@ -747,3 +747,11 @@ input[type="date"]
   position: relative;
   width: 100%;
 }
+.title-coordinate
+{
+  color:#0082E6;
+}
+.history
+{
+  margin:100px 0 50px 0;
+}

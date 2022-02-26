@@ -23,7 +23,6 @@ function Modify() {
         axios({
             method: 'post',
             url: 'http://127.0.0.1:8000/api/user',
-            //withCredentials: true,
             crossdomain: true,
             data: Object.keys(reqData).map(function(key) {
                 return encodeURIComponent(key) + '=' + encodeURIComponent(reqData[key])
@@ -34,10 +33,7 @@ function Modify() {
           "Postman-Token": `Bearer ${accessToken}`,
         }
         }).then((res)=>{ 
-            //console.log('Otmane');
-            //console.log(res.data[0].id);
             setId(res.data[0].id);
-            //setName(res.data);
         })
         .catch(function (error) {
             console.log("Post Error : " +error);
@@ -45,7 +41,6 @@ function Modify() {
       }
     };
     const handleSubmit=(e)=>{
-      //
     if(window.confirm('Do you really want to update coordinates?')==true)
       {
         e.preventDefault();
@@ -57,11 +52,11 @@ function Modify() {
     else
     {
       e.preventDefault();
-      //return <Navigate to="/modify"/>
     }
   }
   return (
     <>
+      <h1 class="title-coordinate">Mes coordonnees:</h1>
       <form method="POST" onSubmit={handleSubmit} className="container modify-form">
         <div className="form-group">
           <label htmlFor="password">Nouveau Mot de passe</label>
