@@ -31,15 +31,22 @@ function History() {
           setUser(res.data[0].id);
           setBool(true);
       });
-      (bool)?console.log('otmane'):Swal.fire('Wait...');
-      (boole)?Swal.fire('data ready'):console.log('otmane');
+      //(bool)?console.log('otmane'):Swal.fire('Wait...');
+      //(boole)?Swal.fire('data ready'):console.log('otmane');
   }
   useEffect(()=>{
     axios.get(`http://127.0.0.1:8000/api/reservation/fetch/${user}`).then((res)=>{
-     setData(res.data);
-         setTimeout(()=>{setBoole(true)},1000);
+     setData(res.data)
+      //setBoole(true); 
+     //alert("hello");
     });
   },[bool]);
+  useEffect(()=>{
+    if(data.length!=0)
+    {
+    setBoole(true);
+    }
+  },[data]);
   return (
     <div className="history">
       <h1>History:</h1>
@@ -67,6 +74,7 @@ function History() {
           }
         </tbody>
       </table>
+      {(boole)?<p></p>:<div className="loader"></div>}
       <Footer/>
     </div>
   )
