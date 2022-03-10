@@ -82,12 +82,12 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
-        flatpickr('input[type="date"]', {
+        /*flatpickr('input[type="date"]', {
             enableTime:true,
             altInput:true,
             altFormat:'d M Y',
             dateFormat:'Y-m-d',
-        });
+        });*/
     </script>
 </body>
 </html>

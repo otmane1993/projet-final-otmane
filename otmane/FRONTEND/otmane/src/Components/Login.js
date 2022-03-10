@@ -55,7 +55,7 @@ function Login() {
           <div className="checkbox">
             <label><input type="checkbox"/> Remember me</label>
           </div>
-          <button type="submit" className="btn btn-primary btn-lg">Submit</button>
+          <button type="submit" className="btn btn-primary btn-lg">Login</button>
         </form>
     </section>
     <Footer/>

@@ -31,14 +31,10 @@ function History() {
           setUser(res.data[0].id);
           setBool(true);
       });
-      //(bool)?console.log('otmane'):Swal.fire('Wait...');
-      //(boole)?Swal.fire('data ready'):console.log('otmane');
   }
   useEffect(()=>{
     axios.get(`http://127.0.0.1:8000/api/reservation/fetch/${user}`).then((res)=>{
      setData(res.data)
-      //setBoole(true); 
-     //alert("hello");
     });
   },[bool]);
   useEffect(()=>{
