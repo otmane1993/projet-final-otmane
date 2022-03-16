@@ -121,17 +121,17 @@ function Nav() {
                         <li>
                             <h4 className="hello-name">Bonjour {name}</h4>
                         </li>
-                        <li><Link to="/history"><span className="glyphicon glyphicon-user"></span>History</Link></li>
+                        <li><Link to="/history"><span className="glyphicon glyphicon-user"></span>Historique</Link></li>
                         <li><Link to="/"><span className="glyphicon glyphicon-search"></span>Recherche</Link></li>
                         <li><button className="btn btn-primary" onClick={logout}>Deconnexion</button></li>
                         <li>
-                        <Link to="/modify"><span className="glyphicon glyphicon-edit"></span>Modify</Link>
+                        <Link to="/modify"><span className="glyphicon glyphicon-edit"></span>Modifier</Link>
                         </li>
                     </>
                     :
                     <>
-                        <li><Link to="/register"><span className="glyphicon glyphicon-user"></span> Sign Up</Link></li>
-                        <li><Link to="/login"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
+                        <li><Link to="/register"><span className="glyphicon glyphicon-user"></span> S'inscrire</Link></li>
+                        <li><Link to="/login"><span className="glyphicon glyphicon-log-in"></span> Se connecter</Link></li>
                     </>
                 }
                 </ul>

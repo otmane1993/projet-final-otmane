@@ -10,10 +10,6 @@ function Index() {
   const [data,setData]=useState([]);
   const [mesage,setMesage]=useState('');
   const [mesError,setMesError]=useState('');
-  //const changeShowe=(bool)=>
-  //{
-  //  setShowe(bool);
-  //}
   return (
     <>
         <Search change={(bool)=>{setShow(bool)}} fetch={(array)=>{setData(array)}} mess={(txt)=>{setMesage(txt)}} error={(err)=>{setMesError(err)}}/>

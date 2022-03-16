@@ -41,7 +41,7 @@ function Modify() {
       }
     };
     const handleSubmit=(e)=>{
-    if(window.confirm('Do you really want to update coordinates?')==true)
+    if(window.confirm('Voulez vous vraiment modifier vos coordonnees?')==true)
       {
         e.preventDefault();
         axios.put(`http://127.0.0.1:8000/api/user/update/${id}`,data).then((res)=>{
@@ -63,15 +63,15 @@ function Modify() {
           <input type="text" name="password" placeholder="Entrez nouveau password" id="password" className="form-control" onChange={(e)=>{setData({...data,password:e.target.value});setMessage('')}}/>
         </div>
         <div className="form-group">
-          <label htmlFor="firstname">Nouveau Firstname</label>
+          <label htmlFor="firstname">Nouveau Prenom</label>
           <input type="text" name="firstname" placeholder="Entrez nouveau firstname" id="firstname" className="form-control" onChange={(e)=>{setData({...data,firstname:e.target.value});setMessage('')}}/>
         </div>
         <div className="form-group">
-          <label htmlFor="lastname">Nouveau Lastname</label>
+          <label htmlFor="lastname">Nouveau Nom</label>
           <input type="text" name="lastname" id="lastname" placeholder="Entrez nouveau lastname" className="form-control" onChange={(e)=>{setData({...data,lastname:e.target.value});setMessage('')}}/>
         </div>
         <div>
-          <input type="submit" value="modify" className="btn btn-info btn-lg"/>
+          <input type="submit" value="modifier" className="btn btn-info btn-lg"/>
         </div>
       </form>
       {(message)?<p className="message-modify container">{message}</p>:<p></p>}

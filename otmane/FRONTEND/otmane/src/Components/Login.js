@@ -39,23 +39,23 @@ function Login() {
   return (
     <>
     <section className="section-login">
-        <h1>Login:</h1>
+        <h1>Se connecter:</h1>
         <form action="" className="container login-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label for="email">Email address:</label>
+            <label for="email">Email:</label>
             <input type="email" className={`form-control ${state.error && state.error.email ? "invalid-input":null}`} id="email" name="email" placeholder="enter your email" onChange={(e)=>{setState({...state,email:e.target.value})}}/>
             {(state.error && state.error.email)?<p className="invalid">{state.error.email[0]}</p>:''}
           </div>
           <div className="form-group">
-            <label for="password">Password:</label>
+            <label for="password">Mot de passe:</label>
             <input type="password" className={`form-control ${state.error && state.error.password ? "invalid-input":null}`} id="password" placeholder="enter your password" name="password" onChange={(e)=>{setState({...state,password:e.target.value})}}/>
             {(state.error && state.error.password)?<p className="invalid">{state.error.password[0]}</p>:''}
           </div>
           {(state.error && state.error=="Bad credentials")?<p className="invalid">{state.error}</p>:''}
           <div className="checkbox">
-            <label><input type="checkbox"/> Remember me</label>
+            <label><input type="checkbox"/> Se souvenir de moi</label>
           </div>
-          <button type="submit" className="btn btn-primary btn-lg">Login</button>
+          <button type="submit" className="btn btn-primary btn-lg">Se connecter</button>
         </form>
     </section>
     <Footer/>

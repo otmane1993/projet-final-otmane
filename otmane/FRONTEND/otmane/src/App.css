@@ -768,3 +768,60 @@ input[type="date"]
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+#top::after
+{
+  display:block;
+  width:12%;
+  height:3px;
+  content:'';
+  background-color:blue;
+  position:absolute;
+  top:20px;
+  right:60%;
+}
+#top::before
+{
+  display:block;
+  width:12%;
+  height:3px;
+  content:'';
+  background-color:blue;
+  position:absolute;
+  top:20px;
+  left:60%;
+}
+@media screen and (max-width:1218px) and (min-width:832px){
+  #top::before
+  {
+    left:65%;
+  }
+  #top::after
+  {
+    right:65%;
+  }
+}
+@media screen and (max-width:832px) and (min-width:486px){
+  #top::before
+  {
+    left:75%;
+  }
+  #top::after
+  {
+    right:75%;
+  }
+}
+@media screen and (max-width:486px){
+  #top::before
+  {
+    left:85%;
+  }
+  #top::after
+  {
+    right:85%;
+  }
+}
+.Top
+{
+  position:relative;
+  padding:0 10px 10px 10px;
+}

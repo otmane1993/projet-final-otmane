@@ -19,7 +19,7 @@ function Search(props) {
             if(res.status===201)
             {
                 setError(res.data);
-                setMessageError('Fill in the empty fields');
+                setMessageError('Remplissez les champs manquants');
                 setMessage('');
                 setData([]);
             }
@@ -80,7 +80,7 @@ function Search(props) {
         {
         if(data.length===0)
         {
-                setMessage('There is no sejour Available for this date and this city');
+                setMessage("il n'y a aucun sejour pour cette date et cette ville");
                 setMessageError('');
         }
         else

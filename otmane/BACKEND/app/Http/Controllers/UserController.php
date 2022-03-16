@@ -104,7 +104,7 @@ class UserController extends Controller
         //$user->lastname=$request->lastname;
         //$user->password=Hash::make($request->password);
         $user->save();
-        return response()->json(['message'=>'updating is successfully']);
+        return response()->json(['message'=>'Succes de la mise a jour']);
     }
 
     /**
