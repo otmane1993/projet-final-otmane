@@ -64,7 +64,7 @@ function Register() {
             <input type="password" className={`form-control ${state.error && state.error.confirm ? "invalid-input":null}`} id="confirm" name="confirm" onChange={(e)=>{setState({...state,confirm:e.target.value})}}/>
             {(state.error && state.error.confirm)?<p class="invalid">{state.error.confirm[0]}</p>:''}
           </div>
-          <button type="submit" className="btn btn-default">S'inscrire</button>
+          <button type="submit" className="btn btn-primary btn-lg">S'inscrire</button>
         </form>
     </section>
     <Footer/>

@@ -6,7 +6,7 @@ import Card from './Card';
 function Results(props) {
   return (
     <section className="results">
-          <h2>Resultats:</h2>
+          <h2 className="res">Resultats:</h2>
           {(props.message)?<p className="nosejour">{props.message}</p>:<p></p>}
           {(props.mesError)?<p className="nosejour">{props.mesError}</p>:<p></p>}
           {

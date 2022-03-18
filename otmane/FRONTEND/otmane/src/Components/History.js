@@ -45,8 +45,8 @@ function History() {
   },[data]);
   return (
     <div className="history">
-      <h1>Historique:</h1>
-      <table className="table table-striped table-bordered">
+      <h1 className="history-title">Historique:</h1>
+      <table className="table table-history table-striped table-bordered">
         <thead>
           <tr>
             <th>Numero:</th>
