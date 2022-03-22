@@ -23,7 +23,7 @@ function Nav() {
         setSwitche(false);
         setName('');
         setToken(null);
-        setRedirect(true);       
+        setRedirect(true);      
     };
     const showNav=(e)=>
     {
@@ -66,10 +66,13 @@ function Nav() {
     }
     if(redirect)
     {
-        //setTimeout(()=>{setRedirect(false)},1);
-        setRedirect(false)
-        return <Navigate to="/"/>;
+        //setRedirect(false);
+        setTimeout(()=>{setRedirect(false)},1);
+        return <Navigate to="/"/>;  
     }
+    /*useEffect(()=>{
+        return <Navigate to="/"/>;
+    },[redirect]);*/
   return (
     <>
         <header className="header-acceuil">
