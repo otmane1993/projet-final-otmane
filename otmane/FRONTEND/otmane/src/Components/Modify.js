@@ -60,15 +60,15 @@ function Modify() {
       <form method="POST" onSubmit={handleSubmit} className="container modify-form">
         <div className="form-group">
           <label htmlFor="password">Nouveau Mot de passe</label>
-          <input type="text" name="password" placeholder="Entrez nouveau password" id="password" className="form-control" onChange={(e)=>{setData({...data,password:e.target.value});setMessage('')}}/>
+          <input type="text" name="password" placeholder="Entrez nouveau mot de passe" id="password" className="form-control" onChange={(e)=>{setData({...data,password:e.target.value});setMessage('')}}/>
         </div>
         <div className="form-group">
           <label htmlFor="firstname">Nouveau Prenom</label>
-          <input type="text" name="firstname" placeholder="Entrez nouveau firstname" id="firstname" className="form-control" onChange={(e)=>{setData({...data,firstname:e.target.value});setMessage('')}}/>
+          <input type="text" name="firstname" placeholder="Entrez nouveau prenom" id="firstname" className="form-control" onChange={(e)=>{setData({...data,firstname:e.target.value});setMessage('')}}/>
         </div>
         <div className="form-group">
           <label htmlFor="lastname">Nouveau Nom</label>
-          <input type="text" name="lastname" id="lastname" placeholder="Entrez nouveau lastname" className="form-control" onChange={(e)=>{setData({...data,lastname:e.target.value});setMessage('')}}/>
+          <input type="text" name="lastname" id="lastname" placeholder="Entrez nouveau nom" className="form-control" onChange={(e)=>{setData({...data,lastname:e.target.value});setMessage('')}}/>
         </div>
         <div>
           <input type="submit" value="modifier" className="btn btn-info btn-lg"/>

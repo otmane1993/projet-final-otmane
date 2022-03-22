@@ -192,9 +192,10 @@ border-radius: 3px;
 text-transform: uppercase;
 font-weight: 600;
 }
-a.active,a:hover{
+ul a.active,ul a:hover{
 background: #1b9bff;
 transition: .5s;
+text-decoration:none;
 }
 .check-btn{
 color: white;
@@ -540,6 +541,10 @@ footer h2
   margin-top:50px;
   margin-bottom:50px;
 }
+.modify-form label
+{
+  font-size:20px;
+}
 .message-modify
 {
   border-radius:5px;
@@ -570,10 +575,10 @@ position: relative;
 {
   .err
   {
-    position:absolute;
+    /*position:absolute;
     left: 45%;
     margin-bottom:50px;
-    top: 8%;
+    top: 8%;*/
   }
 }
 #erre
@@ -588,8 +593,12 @@ position: relative;
 .err {
   color: #ffffff;
   font-family: 'Nunito Sans', sans-serif;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  width:50%;
   font-size: 11rem;
-  display:block !important;
+  /*display:block !important;
   /*position:absolute;
   left: 45%;
   top: 8%;*/
@@ -634,7 +643,7 @@ color: white;
 }
 .mainbox p
 {
-  font-size:20px;
+  font-size:25px;
 }
 .thanks
 {
@@ -677,7 +686,7 @@ color: white;
 .results h2
 {
   color:#0082E6;
-  font-size:30px;
+  font-size:36px;
 }
 .results
 {
@@ -864,6 +873,10 @@ input[type="date"]
 {
   background-color:gray;
 }
+tbody
+{
+  margin-bottom:200px;
+}    
 .title-thanks
 {
   margin-top:0 !important;
@@ -877,7 +890,10 @@ input[type="date"]
 }
 .reser
 {
-  font-size:60px;
+  font-size:45px;
+  width:70%;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 
@@ -949,5 +965,34 @@ input[type="date"]
   .nosejour
   {
     width:80%;
+  }
+}
+.modify-form input[type="text"]
+{
+  padding:20px;
+}
+
+       /****** thanks *******/
+
+.glyphicon-ok
+{
+  text-align:center;
+  display:inline-block;
+  margin-left:auto;
+  margin-right:auto;
+  width:50%;
+  /*padding-left:38%;*/
+}
+@media screen and (max-width:640px) and (min-width:470px)
+{
+  .reser
+  {
+    width:95%;
+  }
+}
+@media screen and (max-width:470px)
+{
+  .reser{
+    font-size:35px;
   }
 }
